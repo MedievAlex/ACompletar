@@ -5,11 +5,13 @@
  */
 package main;
 
+import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import model.coleccionables.*;
+import model.data.*;
 
 /**
  *
@@ -17,11 +19,22 @@ import model.coleccionables.*;
  */
 public class main {
 
-    private ObjectOutputStream salida;
-    private ObjectInputStream entrada;
-
     public static void main(String[] args) {
-        //salida = new ObjectOutputStream();
+    	File ficheroMuseo = new File("museo.ac");
+    	File ficheroBichos = new File("bichos.ac");
+    	File ficheroPeces = new File("bichos.ac");
+    	File ficheroFosiles = new File("fosiles.ac");
+    	File ficheroObras = new File("obras.ac");
+    	
+    	Datos data;
+        ObjectOutputStream salida;
+        ObjectInputStream entrada;
+    	
+    	//salida = new ObjectOutputStream();
         //entrada = new ObjectInputStream();
+    	
+    	if(!ficheroMuseo.exists()) {
+    		Datos.loadData(ficheroMuseo, ficheroBichos, ficheroPeces, ficheroFosiles, ficheroObras);
+    	}
     }
 }

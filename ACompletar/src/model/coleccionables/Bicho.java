@@ -5,44 +5,37 @@
  */
 package model.coleccionables;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  *
  * @author 2dami
  */
-public class Bicho {
-
-    private String nombre;
-    private HashMap<String, Boolean> meses;
-    private String horiario;
-    private final String obtencion;
+public class Bicho extends SerVivo implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
+	private final String obtencion;
     private final String condicion;
     private boolean obtenido;
     private boolean donado;
 
-    public Bicho(String nombre, HashMap<String, Boolean> meses, String horario, String obtencion, String condicion) {
-        this.nombre = nombre;
-        this.meses = meses;
-        this.horiario = horario;
+    public Bicho(String nombre, HashMap<String, Boolean> temporada, String horario, String obtencion, String condicion) {
+    	super(nombre, temporada, horario);
         this.obtencion = obtencion;
         this.condicion = condicion; 
         this.obtenido = false;
         this.donado = false;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getObtencion() {
+    	return obtencion;
     }
-
-    public HashMap<String, Boolean> getMeses() {
-        return meses;
+    
+    public String getCondicion() {
+    	return condicion;
     }
-
-    public String getHoriario() {
-        return horiario;
-    }
-
+    
     public boolean isObtenido() {
         return obtenido;
     }

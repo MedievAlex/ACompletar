@@ -5,13 +5,14 @@
  */
 package model.coleccionables;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author 2dami
  */
-public class Fosil {
+public class Fosil implements Serializable {
         
     private String nombre;
     private ArrayList<Fragmento> fragmentos;

@@ -5,11 +5,17 @@
  */
 package model.data;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import model.Frecuencia;
 import model.Habitad;
 import model.coleccionables.Bicho;
+import model.coleccionables.Coleccionable;
 import model.coleccionables.Fosil;
 import model.coleccionables.Fragmento;
 import model.coleccionables.Obra;
@@ -19,22 +25,42 @@ import model.coleccionables.Pez;
  *
  * @author 2dami
  */
-public class data {
-    
+public class Datos {
+	private static ObjectOutputStream oos = null; // Escritura
     private static HashMap<String, Boolean> temporada;
     
+    public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroFosiles, File ficheroObras) {	
+    	try {
+			oos = new ObjectOutputStream(new FileOutputStream(ficheroMuseo)); // Escritura
+			oos.writeObject(loadBichos(ficheroBichos)); 
+			oos.writeObject(loadPeces(ficheroPeces));
+			oos.writeObject(loadFosiles(ficheroFosiles));
+			oos.writeObject(loadObras(ficheroObras));
+			oos.close(); // Escritura (CERRAR)
+		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
+			e.printStackTrace();
+		} catch (IOException e) { // Excepcion error al acceder al fichero
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.err.println("\n[FATAL ERROR]");
+		}
+    }
+    
     // Seccion Bichos
-    private static void loadBichos() {
+    private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
         temporada = reloadTemporada();
 
-        ArrayList<Bicho> bichos = new ArrayList<>();
+        ArrayList<Coleccionable> bichos = new ArrayList<>();
         Bicho bicho;
         
+        guardarDatos(ficheroBichos, bichos);
+
+        return bichos;
     }
     
     // Seccion Peces
-    private static ArrayList<Pez> loadPeces() {
-        ArrayList<Pez> peces = new ArrayList<>();
+    private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
+        ArrayList<Coleccionable> peces = new ArrayList<>();
         
         // Amarguillo
         temporada = reloadTemporada();
@@ -138,8 +164,7 @@ public class data {
         loadInTemporada("Octubre");
         loadInTemporada("Noviembre");
         loadInTemporada("Dicienbre");
-        pez = new Pez("Cacho", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Cacho", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA));
         
         // Calamar
         temporada = reloadTemporada();
@@ -252,18 +277,26 @@ public class data {
         
         // Eperlano
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Eperlano", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
         // Esturión
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Esturión", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.POCA));
         
         // Gallo
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Gallo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Gobio de río
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Gobio de río", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Gupi
@@ -272,6 +305,8 @@ public class data {
         
         // Jurel
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Jurel", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Jurel gigante
@@ -284,6 +319,8 @@ public class data {
         
         // Koi
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
         peces.add(new Pez("Koi", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.POCA));
         
         // Lampuga
@@ -292,6 +329,7 @@ public class data {
         
         // Leucisco
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Leucisco", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.MUCHA));
         
         // Locha
@@ -300,6 +338,7 @@ public class data {
         
         // Lubina
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Lubina", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Lucio
@@ -308,6 +347,7 @@ public class data {
         
         // Mariposa marina
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Mariposa marina", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Morena
@@ -316,14 +356,17 @@ public class data {
         
         // Pargo rojo
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pargo rojo", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Perca
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Perca", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
         // Perca amarilla
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Perca amarilla", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
                 
         // Pez ángel
@@ -336,6 +379,7 @@ public class data {
         
         // Pez balón
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez balón", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA)); 
         
         // Pez cabeza de serpiente
@@ -344,6 +388,7 @@ public class data {
         
         // Pez cabeza transparente
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez cabeza transparente", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.MUYPOCA)); 
         
         // Pez caimán
@@ -360,6 +405,7 @@ public class data {
         
         // Pez dorado
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez dorado", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE)); 
         
         // Pez erizo
@@ -368,10 +414,12 @@ public class data {
         
         // Pez espada
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez espada", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA)); 
         
         // Pez globo
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez globo", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.POCA)); 
         
         // Pez león
@@ -400,6 +448,7 @@ public class data {
         
         // Pez remo
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez remo", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Pez sierra
@@ -408,10 +457,12 @@ public class data {
         
         // Pez sol
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez sol", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA));
         
         // Pez telescopio
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Pez telescopio", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Piraña
@@ -428,6 +479,7 @@ public class data {
         
         // Ranchú
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Ranchú", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.POCA));
                 
         // Raya
@@ -444,6 +496,7 @@ public class data {
         
         // Rodaballo
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Rodaballo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Salmón
@@ -464,6 +517,7 @@ public class data {
         
         // Taimén
         temporada = reloadTemporada();
+        loadInTemporada("Enero");
         peces.add(new Pez("Taimén", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
         
         // Tetra neón
@@ -498,24 +552,34 @@ public class data {
         temporada = reloadTemporada();
         peces.add(new Pez("Trucha dorada", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
          
+        guardarDatos(ficheroPeces, peces);
+        
         return peces;
     }
     
     // Seccion Fosiles
-    private static void loadFosiles() {
+    private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
         temporada = reloadTemporada();
 
-        ArrayList<Fosil> fosiles = new ArrayList<>();
+        ArrayList<Coleccionable> fosiles = new ArrayList<>();
         Fosil fosil;
         Fragmento fragmento;
+        
+        guardarDatos(ficheroFosiles, fosiles);
+        
+        return fosiles;
     }
     
     // Seccion Obras de Arte
-    private static void loadObras() {
+    private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
         temporada = reloadTemporada();
 
-        ArrayList<Obra> obras = new ArrayList<>();
+        ArrayList<Coleccionable> obras = new ArrayList<>();
         Obra obra;
+        
+        guardarDatos(ficheroObras, obras);
+        
+        return obras;
     }
     
     private static HashMap<String, Boolean> reloadTemporada()
@@ -541,5 +605,19 @@ public class data {
     private static void loadInTemporada(String mes)
     {
         temporada.replace(mes, true);   
+    }
+    
+    private static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
+    	try {
+			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
+			oos.writeObject(lista);
+			oos.close(); // Escritura (CERRAR)
+		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
+			e.printStackTrace();
+		} catch (IOException e) { // Excepcion error al acceder al fichero
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.err.println("\n[FATAL ERROR]");
+		}
     }
 }

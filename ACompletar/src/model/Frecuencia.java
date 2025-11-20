@@ -5,10 +5,12 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 2dami
  */
-public enum Frecuencia {
+public enum Frecuencia implements Serializable {
         MUCHA, FRECUENTE, POCA, MUYPOCA
 }

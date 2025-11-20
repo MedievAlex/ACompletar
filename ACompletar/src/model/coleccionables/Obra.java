@@ -5,13 +5,14 @@
  */
 package model.coleccionables;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
  *
  * @author 2dami
  */
-public class Obra {
+public class Obra implements Serializable {
 
     private String nombre;
     private HashMap<String, Boolean> meses;

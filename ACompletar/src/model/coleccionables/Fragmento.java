@@ -5,11 +5,13 @@
  */
 package model.coleccionables;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 2dami
  */
-public class Fragmento { 
+public class Fragmento implements Serializable { 
         
     private String nombre;
     private boolean obtenido;

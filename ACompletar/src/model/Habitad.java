@@ -5,10 +5,12 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 2dami
  */
-public enum Habitad {
+public enum Habitad implements Serializable {
     CASCADA, DESEMBOCADURA, ESTANQUE, MAR, MUELLE, RIO
 }

@@ -5,45 +5,39 @@
  */
 package model.coleccionables;
 
+import java.io.Serializable;
 import java.util.HashMap;
+
 import model.*;
 
 /**
  *
  * @author 2dami
  */
-public class Pez {
-
-    private final String nombre;
-    private final HashMap<String, Boolean> temporada;
-    private final String horiario;
+public class Pez extends SerVivo implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
     private final Habitad habitad;
     private final Frecuencia frecuencia;
     private boolean obtenido;
     private boolean donado;
 
     public Pez(String nombre, HashMap<String, Boolean> temporada, String horario, Habitad habitad, Frecuencia frecuencia) {
-        this.nombre = nombre;
-        this.temporada = temporada;
-        this.horiario = horario;
+        super(nombre, temporada, horario);
         this.habitad = habitad;
         this.frecuencia = frecuencia;
         this.obtenido = false;
         this.donado = false;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Habitad getHabitad() {
+        return habitad;
     }
-
-    public HashMap<String, Boolean> getTemporada() {
-        return temporada;
+    
+    public Frecuencia getFrecuencia() {
+        return frecuencia;
     }
-
-    public String getHoriario() {
-        return horiario;
-    }
-
+    
     public boolean isObtenido() {
         return obtenido;
     }
