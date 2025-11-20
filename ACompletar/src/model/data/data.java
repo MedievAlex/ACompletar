@@ -60,7 +60,7 @@ public class data {
         loadInTemporada("Julio");
         loadInTemporada("Agosto");
         loadInTemporada("Septiembre");
-        peces.add(new Pez("Arowana", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA));
+        peces.add(new Pez("Arowana", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
         
         // Atún
         temporada = reloadTemporada();
@@ -86,7 +86,7 @@ public class data {
         loadInTemporada("Agosto");
         loadInTemporada("Septiembre");
         loadInTemporada("Octubre");
-        peces.add(new Pez("Betta", temporada, "9:00-16:00", Habitad.RIO, Frecuencia.MUYPOCA));
+        peces.add(new Pez("Betta", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUYPOCA));
         
         // Bichir ensillado
         temporada = reloadTemporada();
@@ -94,374 +94,409 @@ public class data {
         loadInTemporada("Julio");
         loadInTemporada("Agosto");
         loadInTemporada("Septiembre");
-        pez = new Pez("Bichir ensillado", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Bichir ensillado", temporada, "21:00 - 4:00", Habitad.RIO, Frecuencia.POCA));
         
         // Boquerón
         temporada = reloadTemporada();
-        loadInTemporada("");
-        pez = new Pez("Boquerón", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre");
+        peces.add(new Pez("Boquerón", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Caballito de mar
         temporada = reloadTemporada();
-        pez = new Pez("Caballito de mar", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        peces.add(new Pez("Caballito de mar", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Cacho
         temporada = reloadTemporada();
-        pez = new Pez("Cacho", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre");
+        pez = new Pez("Cacho", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA);
         peces.add(pez);
         
         // Calamar
         temporada = reloadTemporada();
-        pez = new Pez("Calamar", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Dicienbre");
+        peces.add(new Pez("Calamar", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Cangrejo de río
         temporada = reloadTemporada();
-        pez = new Pez("Cangrejo de río", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.MUCHA);
-        peces.add(pez);
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        peces.add(new Pez("Cangrejo de río", temporada, "24h", Habitad.ESTANQUE, Frecuencia.MUCHA));
         
         // Cangrejo de Shanghái
         temporada = reloadTemporada();
-        pez = new Pez("Cangrejo de Shanghái", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        peces.add(new Pez("Cangrejo de Shanghái", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
         
         // Carpa
         temporada = reloadTemporada();
-        pez = new Pez("Carpa", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre");
+        peces.add(new Pez("Carpa", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Carpín
         temporada = reloadTemporada();
-        pez = new Pez("Carpín", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre"); 
+        peces.add(new Pez("Carpín", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
-        // Celacanto
+        // Celacanto CON LLUVIA
         temporada = reloadTemporada();
-        pez = new Pez("Celacanto", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre");
+        peces.add(new Pez("Celacanto", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Dorada japonesa
         temporada = reloadTemporada();
-        pez = new Pez("Dorada japonesa", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        peces.add(new Pez("Dorada japonesa", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Dorado
         temporada = reloadTemporada();
-        pez = new Pez("Dorado", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUYPOCA);
-        peces.add(pez);
+        /*
+        loadInTemporada("Enero");
+        loadInTemporada("Febrero");
+        loadInTemporada("Marzo");
+        loadInTemporada("Abril");
+        loadInTemporada("Mayo");
+        loadInTemporada("Junio");
+        loadInTemporada("Julio");
+        loadInTemporada("Agosto");
+        loadInTemporada("Septiembre");
+        loadInTemporada("Octubre");
+        loadInTemporada("Noviembre");
+        loadInTemporada("Dicienbre");
+         */
+        peces.add(new Pez("Dorado", temporada, "4:00 - 21:00", Habitad.RIO, Frecuencia.MUYPOCA));
         
         // Eperlano
         temporada = reloadTemporada();
-        pez = new Pez("Eperlano", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Eperlano", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
         // Esturión
         temporada = reloadTemporada();
-        pez = new Pez("Esturión", temporada, "16:00h - 9:00h", Habitad.DESEMBOCADURA, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Esturión", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.POCA));
         
         // Gallo
         temporada = reloadTemporada();
-        pez = new Pez("Gallo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Gallo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Gobio de río
         temporada = reloadTemporada();
-        pez = new Pez("Gobio de río", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Gobio de río", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Gupi
         temporada = reloadTemporada();
-        pez = new Pez("Gupi", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Gupi", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Jurel
         temporada = reloadTemporada();
-        pez = new Pez("Jurel", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Jurel", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Jurel gigante
         temporada = reloadTemporada();
-        pez = new Pez("Jurel gigante", temporada, "16:00h - 9:00h", Habitad.MUELLE, Frecuencia.MUYPOCA);
-        peces.add(pez);
+        peces.add(new Pez("Jurel gigante", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
         
         // Killi
         temporada = reloadTemporada();
-        pez = new Pez("Killi", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Killi", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Koi
         temporada = reloadTemporada();
-        pez = new Pez("Koi", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Koi", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.POCA));
         
         // Lampuga
         temporada = reloadTemporada();
-        pez = new Pez("Lampuga", temporada, "16:00h - 9:00h", Habitad.MUELLE, Frecuencia.MUYPOCA);
-        peces.add(pez);
+        peces.add(new Pez("Lampuga", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
         
         // Leucisco
         temporada = reloadTemporada();
-        pez = new Pez("Leucisco", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Leucisco", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.MUCHA));
         
         // Locha
         temporada = reloadTemporada();
-        pez = new Pez("Locha", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Locha", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
         // Lubina
         temporada = reloadTemporada();
-        pez = new Pez("Lubina", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Lubina", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Lucio
         temporada = reloadTemporada();
-        pez = new Pez("Lucio", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Lucio", temporada, "24h", Habitad.RIO, Frecuencia.POCA));
         
         // Mariposa marina
         temporada = reloadTemporada();
-        pez = new Pez("Mariposa marina", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Mariposa marina", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Morena
         temporada = reloadTemporada();
-        pez = new Pez("Morena", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Morena", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Pargo rojo
         temporada = reloadTemporada();
-        pez = new Pez("Pargo rojo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Pargo rojo", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Perca
         temporada = reloadTemporada();
-        pez = new Pez("Perca", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Perca", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
         
         // Perca amarilla
         temporada = reloadTemporada();
-        pez = new Pez("Perca amarilla", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Perca amarilla", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
                 
         // Pez ángel
         temporada = reloadTemporada();
-        pez = new Pez("Pez ángel", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pez ángel", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
         
         // Pez arcoíris
         temporada = reloadTemporada();
-        pez = new Pez("Pez arcoíris", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez); 
+        peces.add(new Pez("Pez arcoíris", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE)); 
         
         // Pez balón
         temporada = reloadTemporada();
-        pez = new Pez("Pez balón", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez balón", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA)); 
         
         // Pez cabeza de serpiente
         temporada = reloadTemporada();
-        pez = new Pez("Pez cabeza de serpiente", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.MUYPOCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez cabeza de serpiente", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.MUYPOCA)); 
         
         // Pez cabeza transparente
         temporada = reloadTemporada();
-        pez = new Pez("Pez cabeza transparente", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUYPOCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez cabeza transparente", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.MUYPOCA)); 
         
         // Pez caimán
         temporada = reloadTemporada();
-        pez = new Pez("Pez caimán", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.MUYPOCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez caimán", temporada, "16:00 - 9:00", Habitad.ESTANQUE, Frecuencia.MUYPOCA)); 
         
         // Pez cirujano
         temporada = reloadTemporada();
-        pez = new Pez("Pez cirujano", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez cirujano", temporada, "24h", Habitad.MAR, Frecuencia.POCA)); 
         
         // Pez doctor
         temporada = reloadTemporada();
-        pez = new Pez("Pez doctor", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez); 
+        peces.add(new Pez("Pez doctor", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE)); 
         
         // Pez dorado
         temporada = reloadTemporada();
-        pez = new Pez("Pez dorado", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez); 
+        peces.add(new Pez("Pez dorado", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE)); 
         
         // Pez erizo
         temporada = reloadTemporada();
-        pez = new Pez("Pez erizo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUCHA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez erizo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA)); 
         
         // Pez espada
         temporada = reloadTemporada();
-        pez = new Pez("Pez espada", temporada, "16:00h - 9:00h", Habitad.MUELLE, Frecuencia.MUYPOCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez espada", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA)); 
         
         // Pez globo
         temporada = reloadTemporada();
-        pez = new Pez("Pez globo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez globo", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.POCA)); 
         
         // Pez león
         temporada = reloadTemporada();
-        pez = new Pez("Pez león", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez); 
+        peces.add(new Pez("Pez león", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE)); 
         
         // Pez luna
         temporada = reloadTemporada();
-        pez = new Pez("Pez luna", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUYPOCA);
-        peces.add(pez); 
+        peces.add(new Pez("Pez luna", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.MUYPOCA)); 
         
         // Pez mariposa
         temporada = reloadTemporada();
-        pez = new Pez("Pez mariposa", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Pez mariposa", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Pez martillo
         temporada = reloadTemporada();
-        pez = new Pez("Pez martillo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pez martillo", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
         
         // Pez napoleón
         temporada = reloadTemporada();
-        pez = new Pez("Pez napoleón", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pez napoleón", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.POCA));
         
         // Pez payaso
         temporada = reloadTemporada();
-        pez = new Pez("Pez payaso", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Pez payaso", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
         
         // Pez remo
         temporada = reloadTemporada();
-        pez = new Pez("Pez remo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pez remo", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Pez sierra
         temporada = reloadTemporada();
-        pez = new Pez("Pez sierra", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pez sierra", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
         
         // Pez sol
         temporada = reloadTemporada();
-        pez = new Pez("Pez sol", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Pez sol", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA));
         
         // Pez telescopio
         temporada = reloadTemporada();
-        pez = new Pez("Pez telescopio", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Pez telescopio", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Piraña
         temporada = reloadTemporada();
-        pez = new Pez("Piraña", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Piraña", temporada, "9:00 - 16:00 y 21:00 - 4:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Pirarucú
         temporada = reloadTemporada();
-        pez = new Pez("Pirarucú", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Pirarucú", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
         
         // Rana
         temporada = reloadTemporada();
-        pez = new Pez("Rana", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Rana", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Ranchú
         temporada = reloadTemporada();
-        pez = new Pez("Ranchú", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Ranchú", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.POCA));
                 
         // Raya
         temporada = reloadTemporada();
-        pez = new Pez("Raya", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);     
+        peces.add(new Pez("Raya", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.POCA));     
         
         // Rémora
         temporada = reloadTemporada();
-        pez = new Pez("Rémora", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Rémora", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Renacuajo
         temporada = reloadTemporada();
-        pez = new Pez("Renacuajo", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Renacuajo", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Rodaballo
         temporada = reloadTemporada();
-        pez = new Pez("Rodaballo", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.MUCHA);
-        peces.add(pez);
+        peces.add(new Pez("Rodaballo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
         
         // Salmón
         temporada = reloadTemporada();
-        pez = new Pez("Salmón", temporada, "16:00h - 9:00h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Salmón", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
         
         // Salmón japonés
         temporada = reloadTemporada();
-        pez = new Pez("Salmón japonés", temporada, "16:00h - 9:00h", Habitad.CASCADA, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Salmón japonés", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.POCA));
         
         // Salmón real
         temporada = reloadTemporada();
-        pez = new Pez("Salmón real", temporada, "16:00h - 9:00h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Salmón real", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
         
         // Siluro
         temporada = reloadTemporada();
-        pez = new Pez("Siluro", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Siluro", temporada, "16:00 - 9:00", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
         
         // Taimén
         temporada = reloadTemporada();
-        pez = new Pez("Taimén", temporada, "16:00h - 9:00h", Habitad.CASCADA, Frecuencia.MUYPOCA);
-        peces.add(pez);
+        peces.add(new Pez("Taimén", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
         
         // Tetra neón
         temporada = reloadTemporada();
-        pez = new Pez("Tetra neón", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Tetra neón", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Tiburón
         temporada = reloadTemporada();
-        pez = new Pez("Tiburón", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Tiburón", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
         
         // Tiburón ballena
         temporada = reloadTemporada();
-        pez = new Pez("Tiburón ballena", temporada, "16:00h - 9:00h", Habitad.MAR, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Tiburón ballena", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
         
         // Tilapia
         temporada = reloadTemporada();
-        pez = new Pez("Tilapia", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Tilapia", temporada, "24h", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Tortuga caparazón blando
         temporada = reloadTemporada();
-        pez = new Pez("Tortuga caparazón blando", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.FRECUENTE);
-        peces.add(pez);
+        peces.add(new Pez("Tortuga caparazón blando", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.FRECUENTE));
         
         // Tortuga mordedora
         temporada = reloadTemporada();
-        pez = new Pez("Tortuga mordedora", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Tortuga mordedora", temporada, "21:00 - 4:00", Habitad.RIO, Frecuencia.POCA));
         
         // Trucha
         temporada = reloadTemporada();
-        pez = new Pez("Trucha", temporada, "16:00h - 9:00h", Habitad.CASCADA, Frecuencia.POCA);
-        peces.add(pez);
+        peces.add(new Pez("Trucha", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.POCA));
         
         // Trucha dorada
         temporada = reloadTemporada();
-        pez = new Pez("Trucha dorada", temporada, "16:00h - 9:00h", Habitad.CASCADA, Frecuencia.MUYPOCA);
-        peces.add(pez);
+        peces.add(new Pez("Trucha dorada", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
          
         return peces;
     }
