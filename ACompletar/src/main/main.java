@@ -20,11 +20,14 @@ import model.data.*;
 public class main {
 
     public static void main(String[] args) {
-    	File ficheroMuseo = new File("museo.ac");
-    	File ficheroBichos = new File("bichos.ac");
-    	File ficheroPeces = new File("bichos.ac");
-    	File ficheroFosiles = new File("fosiles.ac");
-    	File ficheroObras = new File("obras.ac");
+    	String directoryPath = "ficheros/";
+    	File ficheroMuseo = new File(directoryPath + "museo.ac");
+    	File ficheroBichos = new File(directoryPath + "bichos.ac");
+    	File ficheroPeces = new File(directoryPath + "bichos.ac");
+    	File ficheroFosiles = new File(directoryPath + "fosiles.ac");
+    	File ficheroObras = new File(directoryPath + "obras.ac");
+    	
+    	System.out.println("Files created successfully.");
     	
     	Datos data;
         ObjectOutputStream salida;

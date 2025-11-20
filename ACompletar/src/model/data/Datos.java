@@ -611,7 +611,6 @@ public class Datos {
     	try {
 			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
 			oos.writeObject(lista);
-			oos.close(); // Escritura (CERRAR)
 		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
 			e.printStackTrace();
 		} catch (IOException e) { // Excepcion error al acceder al fichero
