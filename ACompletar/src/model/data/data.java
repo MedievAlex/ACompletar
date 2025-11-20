@@ -94,7 +94,6 @@ public class data {
         loadInTemporada("Julio");
         loadInTemporada("Agosto");
         loadInTemporada("Septiembre");
-        
         pez = new Pez("Bichir ensillado", temporada, "16:00h - 9:00h", Habitad.RIO, Frecuencia.POCA);
         peces.add(pez);
         
