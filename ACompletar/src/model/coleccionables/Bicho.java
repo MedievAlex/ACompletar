@@ -5,18 +5,57 @@
  */
 package model.coleccionables;
 
-import java.util.ArrayList;
-import model.Mes;
+import java.util.HashMap;
 
 /**
  *
  * @author 2dami
  */
 public class Bicho {
-        
+
     private String nombre;
-    private ArrayList<Mes> disponible;
+    private HashMap<String, Boolean> meses;
+    private String horiario;
+    private final String obtencion;
+    private final String condicion;
     private boolean obtenido;
     private boolean donado;
-    
+
+    public Bicho(String nombre, HashMap<String, Boolean> meses, String horario, String obtencion, String condicion) {
+        this.nombre = nombre;
+        this.meses = meses;
+        this.horiario = horario;
+        this.obtencion = obtencion;
+        this.condicion = condicion; 
+        this.obtenido = false;
+        this.donado = false;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public HashMap<String, Boolean> getMeses() {
+        return meses;
+    }
+
+    public String getHoriario() {
+        return horiario;
+    }
+
+    public boolean isObtenido() {
+        return obtenido;
+    }
+
+    public void setObtenido(boolean obtenido) {
+        this.obtenido = obtenido;
+    }
+
+    public boolean isDonado() {
+        return donado;
+    }
+
+    public void setDonado(boolean donado) {
+        this.donado = donado;
+    }
 }

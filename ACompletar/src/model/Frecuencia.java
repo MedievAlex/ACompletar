@@ -9,6 +9,6 @@ package model;
  *
  * @author 2dami
  */
-public enum Mes {
-    ENERO, FEBRERO, MARZO, ABRIL, MAYO, JUNIO, JULIO, AGOSTO, SEPTIEMBRE, OCTUBRE, NOVIEMBRE, DICIEMBRE
+public enum Frecuencia {
+        MUCHA, FRECUENTE, POCA, MUYPOCA
 }

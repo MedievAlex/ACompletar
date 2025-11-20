@@ -14,7 +14,32 @@ import java.util.ArrayList;
 public class Fosil {
         
     private String nombre;
-    private ArrayList<Fragmento> disponible;
+    private ArrayList<Fragmento> fragmentos;
     private boolean completo;
     
+    public Fosil(String nombre) {
+        this.nombre = nombre;
+        this.fragmentos = new ArrayList<>();
+        this.completo = false;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
+    public ArrayList<Fragmento> getFragmentos() {
+        return fragmentos;
+    }
+    
+    public void addFragmentos(Fragmento fragmento) {
+        this.fragmentos.add(fragmento);
+    }
+    
+    public boolean isCompleto() {
+        return completo;
+    }
+    
+    public void setCompleto() {
+        
+    }
 }
