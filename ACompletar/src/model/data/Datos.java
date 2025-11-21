@@ -42,7 +42,6 @@ public class Datos {
 			oos.writeObject(submarinos);
 			oos.writeObject(fosiles);
 			oos.writeObject(obras);
-			oos.writeObject(giroides);
 			oos.close(); // Escritura (CERRAR)
 		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
 			e.printStackTrace();

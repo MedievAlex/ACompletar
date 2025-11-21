@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import model.coleccionables.*;
 import model.coleccionables.exposiciones.Fosil;
 import model.coleccionables.exposiciones.Obra;
+import model.coleccionables.exposiciones.servivo.Bicho;
 import model.coleccionables.exposiciones.servivo.Pez;
 import model.coleccionables.exposiciones.servivo.Submarino;
 import model.data.*;
@@ -44,25 +45,31 @@ public class main {
 
 			switch(opcion) {
 			case 1: // 1. Mostrar BICHOS
-				mostrarBichos(ficheros.get(1));
+				mostrar(ficheros.get(1));
+				//mostrarBichos(ficheros.get(1));
 				break;
 			case 2: // Mostrar PECES
-				mostrarPeces(ficheros.get(3));
+				mostrar(ficheros.get(2));
+				//mostrarPeces(ficheros.get(2));
 				break;
 			case 3: // Mostrar SUBMARINOS
-				mostrarSubmarinos(ficheros.get(3));
+				mostrar(ficheros.get(3));
+				//mostrarSubmarinos(ficheros.get(3));
 				break;
 			case 4: // Mostrar FOSILES
-				mostrarFosiles(ficheros.get(4));
+				mostrar(ficheros.get(4));
+				//mostrarFosiles(ficheros.get(4));
 				break;
 			case 5: // Mostrar OBRAS DE ARTE
-				mostrarObras(ficheros.get(5));
+				mostrar(ficheros.get(5));
+				//mostrarObras(ficheros.get(5));
 				break;
 			case 6: // Mostrar GIROIDES
-				mostrarGiroides(ficheros.get(6));
+				mostrar(ficheros.get(6));
+				//mostrarGiroides(ficheros.get(6));
 				break;
 			case 7: // Mostrar
-				
+				mostrarMuseo(ficheros.get(0));
 				break;
 			case 0: 
 				System.out.println(" ________________\n|                |\n|      AGUR      |\n|________________|\n");
@@ -72,6 +79,8 @@ public class main {
 		System.out.println("***************************************");
 	}
 
+	
+	//***Verifica la existencia de los ficheros******************************************************************************************/
 	public static boolean verificarFicheros(int cantidad, ArrayList<File> ficheros) { 
 		int existentes = 0;
 		
@@ -104,6 +113,7 @@ public class main {
 		return Utilidades.leerInt(0, 7);
 	}
 
+	//***Muestra el fichero**************************************************************************************************************/
 	public static void mostrar(File fichero){
 		ObjectInputStream ois = null; // Lectura
 		boolean finArchivo = false;
@@ -135,6 +145,56 @@ public class main {
 			System.err.println("[ERROR] Fichero no encontrado.");
 		}
 	}
+	
+	//***Muestra el fichero**************************************************************************************************************/
+		public static void mostrarMuseo(File fichero){
+			ObjectInputStream ois = null; // Lectura
+			boolean finArchivo = false;
+
+			if(fichero.exists()){
+				try {
+					ois = new ObjectInputStream(new FileInputStream(fichero)); // Lectura
+					System.out.println("---------------------------------------");
+					while (!finArchivo) {
+						try{
+							ArrayList<Coleccionable> lista = (ArrayList<Coleccionable>) ois.readObject();					
+							for (Coleccionable coleccionable : lista) {
+								if(coleccionable instanceof Bicho) {
+									System.out.print("[BICHO]    ");
+								}
+								else if(coleccionable instanceof Pez) {
+									System.out.print("[PEZ]      ");
+								}
+								else if(coleccionable instanceof Submarino) {
+									System.out.print("[SUBMARINO]");
+								}
+								else if(coleccionable instanceof Fosil) {
+									System.out.print("[FOSIL]    ");
+								}
+								else if(coleccionable instanceof Obra) {
+									System.out.print("[OBRA]     ");
+								}
+								System.out.println(coleccionable.toString());
+								System.out.println("---------------------------------------");
+							}
+						} catch (EOFException e) { // Fin del archivo alcanzado
+							finArchivo = true;
+						}
+					}
+					ois.close();  // Lectura (CERRAR)
+				} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
+					e.printStackTrace();
+				} catch (ClassNotFoundException e) { // Excepcion no es de la misma clase o no se ha encontrado
+					e.printStackTrace();
+				} catch (IOException e) { // Excepcion error al acceder al fichero
+					e.printStackTrace();
+				} catch(Exception e) {
+					System.err.println("\n[FATAL ERROR]");
+				}
+			}else {
+				System.err.println("[ERROR] Fichero no encontrado.");
+			}
+		}
 
 	/****[BICHOS]************************************************************************************************************************/
 	public static void mostrarBichos(File ficheroBichos){
@@ -145,13 +205,13 @@ public class main {
 		if(ficheroBichos.exists()){
 			try {
 				ois = new ObjectInputStream(new FileInputStream(ficheroBichos)); // Lectura
-				System.out.println("[PECES]");
+				System.out.println("[BICHOS]");
 				System.out.println("---------------------------------------");
 				while (!finArchivo) {
 					try{
 						Coleccionable coleccionable = (Coleccionable) ois.readObject();
-						if(coleccionable instanceof Pez) {							
-							System.out.println(numero+ "-" + ((Pez)coleccionable).toString());
+						if(coleccionable instanceof Bicho) {							
+							System.out.println(numero+ "-" + ((Bicho)coleccionable).toString());
 							numero++;
 							System.out.println("---------------------------------------");
 						}
