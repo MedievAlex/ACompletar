@@ -21,6 +21,7 @@ public class Datos {
 	private static ObjectOutputStream oos = null; // Escritura
 	private static HashMap<String, Boolean> temporada;
 
+	/****Carga los datos de los coleccionables******************************************************************************************/
 	public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroFosiles, File ficheroObras) {
 		ArrayList<Coleccionable> bichos = loadBichos(ficheroBichos);
 		ArrayList<Coleccionable> peces = loadPeces(ficheroPeces);
@@ -43,7 +44,8 @@ public class Datos {
 		}
 	}
 
-	// Seccion Bichos
+	/****[EXPOSICIONES: SERES VIVOS]****************************************************************************************************/
+	/****Seres Vivos: Bichos************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		temporada = reloadTemporada();
 
@@ -55,7 +57,7 @@ public class Datos {
 		return bichos;
 	}
 
-	// Seccion Peces
+	/****Seres Vivos: Peces*************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
 		ArrayList<Coleccionable> peces = new ArrayList<>();
 
@@ -910,7 +912,32 @@ public class Datos {
 		return peces;
 	}
 
-	// Seccion Fosiles
+	// Reinicia el valor de la temporada
+	private static HashMap<String, Boolean> reloadTemporada() {
+		HashMap<String, Boolean> temporadaVacia = new HashMap<>();
+
+		temporadaVacia.put("Enero", false); // 1
+		temporadaVacia.put("Febrero", false); // 2
+		temporadaVacia.put("Marzo", false); // 3
+		temporadaVacia.put("Abril", false); // 4
+		temporadaVacia.put("Mayo", false); // 5
+		temporadaVacia.put("Junio", false); // 6
+		temporadaVacia.put("Julio", false); // 7
+		temporadaVacia.put("Agosto", false); // 8
+		temporadaVacia.put("Septiembre", false); // 9
+		temporadaVacia.put("Octubre", false); // 10
+		temporadaVacia.put("Noviembre", false); // 11
+		temporadaVacia.put("Diciembre", false); // 12     
+
+		return temporadaVacia;
+	}
+	
+	// Registra el mes en la temporada
+	private static void loadInTemporada(String mes) {
+		temporada.replace(mes, true);
+	}
+	
+	/****Coleccionables: Fosiles********************************************************************************************************/
 	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
 		ArrayList<Coleccionable> fosiles = new ArrayList<>();
 		ArrayList<Fragmento> fragmentos;
@@ -1044,64 +1071,64 @@ public class Datos {
 		fragmentos.add(new Fragmento("Cuerpo quetzalcoatlus"));
 		fragmentos.add(new Fragmento("Ala derecha quetzalcoatlus"));
 		fosiles.add(new Fosil("Quetzalcoatlus", fragmentos));
-		
+
 		// Tiranosaurio         
 		fragmentos = new ArrayList<>();
 		fragmentos.add(new Fragmento("Cráneo tiranosaurio"));
 		fragmentos.add(new Fragmento("Cuerpo tiranosaurio"));
 		fragmentos.add(new Fragmento("Cola tiranosaurio"));
 		fosiles.add(new Fosil("Tiranosaurio", fragmentos));
-		
+
 		// Triceratops         
 		fragmentos = new ArrayList<>();
 		fragmentos.add(new Fragmento("Cráneo triceratops"));
 		fragmentos.add(new Fragmento("Cuerpo triceratops"));
 		fragmentos.add(new Fragmento("Cola triceratops"));
 		fosiles.add(new Fosil("Triceratops", fragmentos));
-		
+
 		// FRAGMENTOS ÚNICOS
 		fragmentos = new ArrayList<>();
 		fragmentos.add(new Fragmento("Único"));
-		
+
 		// Acantostega
 		fosiles.add(new Fosil("Acantostega", fragmentos));
-		
+
 		// Ámbar
 		fosiles.add(new Fosil("Ámbar", fragmentos));	
-		
+
 		// Amonites
 		fosiles.add(new Fosil("Amonites", fragmentos));
-		
+
 		// Anomalocaris
 		fosiles.add(new Fosil("Anomalocaris", fragmentos));
-		
+
 		// Arqueoptérix
 		fosiles.add(new Fosil("Arqueoptérix", fragmentos));	
-		
+
 		// Australopiteco
 		fosiles.add(new Fosil("Australopiteco", fragmentos));	
-		
+
 		// Coprolito
 		fosiles.add(new Fosil("Coprolito", fragmentos));
-		
+
 		// Dunkleosteo
 		fosiles.add(new Fosil("Dunkleosteo", fragmentos));	
-		
+
 		// Eustenopteron
 		fosiles.add(new Fosil("Eustenopteron", fragmentos));
-		
+
 		// Huella de dinosaurio
 		fosiles.add(new Fosil("Huella de dinosaurio", fragmentos));
-		
+
 		// Juramaia
 		fosiles.add(new Fosil("Juramaia", fragmentos));	
-		
+
 		// Mandíbula de tiburón
 		fosiles.add(new Fosil("Mandíbula de tiburón", fragmentos));
-		
+
 		// Myllokunmingia
 		fosiles.add(new Fosil("Myllokunmingia", fragmentos));	
-		
+
 		// Trilobites
 		fosiles.add(new Fosil("Trilobites", fragmentos));
 
@@ -1111,6 +1138,7 @@ public class Datos {
 	}
 
 	// Seccion Obras de Arte
+	/****Coleccionables: Obras de Arte**************************************************************************************************/
 	private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
 		temporada = reloadTemporada();
 
@@ -1121,31 +1149,9 @@ public class Datos {
 
 		return obras;
 	}
-
+	
 	// Reinicia la lista de temporada
-	private static HashMap<String, Boolean> reloadTemporada() {
-		HashMap<String, Boolean> temporadaVacia = new HashMap<>();
 
-		temporadaVacia.put("Enero", false); // 1
-		temporadaVacia.put("Febrero", false); // 2
-		temporadaVacia.put("Marzo", false); // 3
-		temporadaVacia.put("Abril", false); // 4
-		temporadaVacia.put("Mayo", false); // 5
-		temporadaVacia.put("Junio", false); // 6
-		temporadaVacia.put("Julio", false); // 7
-		temporadaVacia.put("Agosto", false); // 8
-		temporadaVacia.put("Septiembre", false); // 9
-		temporadaVacia.put("Octubre", false); // 10
-		temporadaVacia.put("Noviembre", false); // 11
-		temporadaVacia.put("Diciembre", false); // 12     
-
-		return temporadaVacia;
-	}
-
-	// Registra el mes en la temporada
-	private static void loadInTemporada(String mes) {
-		temporada.replace(mes, true);
-	}
 
 	// Guarda los datos en los ficheros individuales
 	private static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {

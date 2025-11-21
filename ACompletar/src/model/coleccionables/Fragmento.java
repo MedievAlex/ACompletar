@@ -38,7 +38,6 @@ public class Fragmento implements Serializable {
 
 	@Override
 	public String toString() {
-		return "\n   |- [ " + nombre + " ]\n   | Obtenido: " + obtenido + " | Donado: " + donado;
-		//return super.toString() + "\n    - [ " + nombre + " ]\n   | Obtenido: " + obtenido + " | Donado: " + donado;
+		return "\n   |-[ " + nombre + " ]\n   | Obtenido: " + obtenido + " | Donado: " + donado;
 	}
 }
