@@ -16,6 +16,7 @@ import model.coleccionables.exposiciones.Fragmento;
 import model.coleccionables.exposiciones.Obra;
 import model.coleccionables.exposiciones.servivo.Bicho;
 import model.coleccionables.exposiciones.servivo.Pez;
+import model.coleccionables.exposiciones.servivo.Submarino;
 
 public class Datos {
 
@@ -23,9 +24,10 @@ public class Datos {
 	private static HashMap<String, Boolean> temporada;
 
 	//***Carga los datos de los coleccionables******************************************************************************************/
-	public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroFosiles, File ficheroObras) {
+	public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroSubmarinos, File ficheroFosiles, File ficheroObras) {
 		ArrayList<Coleccionable> bichos = loadBichos(ficheroBichos);
 		ArrayList<Coleccionable> peces = loadPeces(ficheroPeces);
+		ArrayList<Coleccionable> submarinos = loadSubmarinos(ficheroSubmarinos);
 		ArrayList<Coleccionable> fosiles = loadFosiles(ficheroFosiles);
 		ArrayList<Coleccionable> obras = loadObras(ficheroObras);
 
@@ -33,6 +35,7 @@ public class Datos {
 			oos = new ObjectOutputStream(new FileOutputStream(ficheroMuseo)); // Escritura
 			oos.writeObject(bichos);
 			oos.writeObject(peces);
+			oos.writeObject(submarinos);
 			oos.writeObject(fosiles);
 			oos.writeObject(obras);
 			oos.close(); // Escritura (CERRAR)
@@ -64,10 +67,23 @@ public class Datos {
 	/****[EXPOSICIONES]*****************************************************************************************************************/
 	/****Seres Vivos: Bichos************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
-		temporada = reloadTemporada();
-
 		ArrayList<Coleccionable> bichos = new ArrayList<>();
-		Bicho bicho;
+		
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
 
 		guardarDatos(ficheroBichos, bichos);
 
@@ -929,6 +945,32 @@ public class Datos {
 		return peces;
 	}
 
+	/****Seres Vivos: Submarinos********************************************************************************************************/
+	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
+		ArrayList<Coleccionable> submarinos = new ArrayList<>();
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("nombre", temporada, "24h"));
+		
+		guardarDatos(ficheroSubmarinos, submarinos);
+
+		return submarinos;
+	}
+	
+	
 	//***Reinicia el valor de la temporada**********************************************************************************************/
 	private static HashMap<String, Boolean> reloadTemporada() {
 		HashMap<String, Boolean> temporadaVacia = new HashMap<>();
