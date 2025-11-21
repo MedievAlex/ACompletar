@@ -23,4 +23,9 @@ public abstract class SerVivo extends Coleccionable implements Serializable {
     public String getHoriario() {
         return horiario;
     }
+
+	@Override
+	public String toString() {
+		return super.toString() + "\n   | Temporada: " + temporada + "\n   | Horiario: " + horiario;
+	}
 }

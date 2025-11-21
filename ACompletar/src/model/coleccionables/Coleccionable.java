@@ -35,4 +35,9 @@ public abstract class Coleccionable implements Serializable {
     public void setDonado(boolean donado) {
         this.donado = donado;
     }
+
+	@Override
+	public String toString() {
+		return "[ " + nombre + " ]\n   | Obtenido: " + obtenido + " | Donado: " + donado;
+	}   
 }
