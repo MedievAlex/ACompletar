@@ -49,6 +49,6 @@ public class Fosil extends Coleccionable implements Serializable {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\n   | Completo: " + completo + "\n   | Fragmentos: " + fragmentos.toString();
+		return this.nameToString() + "\n   | Completo: " + completo + "\n   | Fragmentos: " + fragmentos.toString();
 	}
 }

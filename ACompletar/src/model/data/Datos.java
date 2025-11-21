@@ -11,6 +11,7 @@ import model.Frecuencia;
 import model.Habitad;
 import model.TipoObra;
 import model.coleccionables.Coleccionable;
+import model.coleccionables.Giroide;
 import model.coleccionables.exposiciones.Fosil;
 import model.coleccionables.exposiciones.Fragmento;
 import model.coleccionables.exposiciones.Obra;
@@ -24,20 +25,24 @@ public class Datos {
 	private static HashMap<String, Boolean> temporada;
 
 	//***Carga los datos de los coleccionables******************************************************************************************/
-	public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroSubmarinos, File ficheroFosiles, File ficheroObras) {
-		ArrayList<Coleccionable> bichos = loadBichos(ficheroBichos);
-		ArrayList<Coleccionable> peces = loadPeces(ficheroPeces);
-		ArrayList<Coleccionable> submarinos = loadSubmarinos(ficheroSubmarinos);
-		ArrayList<Coleccionable> fosiles = loadFosiles(ficheroFosiles);
-		ArrayList<Coleccionable> obras = loadObras(ficheroObras);
+	public static void loadData(ArrayList<File> ficheros) {
+		
+		ArrayList<Coleccionable> bichos = loadBichos(ficheros.get(1));
+		ArrayList<Coleccionable> peces = loadPeces(ficheros.get(2));
+		ArrayList<Coleccionable> submarinos = loadSubmarinos(ficheros.get(3));
+		ArrayList<Coleccionable> fosiles = loadFosiles(ficheros.get(4));
+		ArrayList<Coleccionable> obras = loadObras(ficheros.get(5));
+		
+		ArrayList<Coleccionable> giroides = loadGiroides(ficheros.get(6));
 
 		try {
-			oos = new ObjectOutputStream(new FileOutputStream(ficheroMuseo)); // Escritura
+			oos = new ObjectOutputStream(new FileOutputStream(ficheros.get(0))); // Escritura
 			oos.writeObject(bichos);
 			oos.writeObject(peces);
 			oos.writeObject(submarinos);
 			oos.writeObject(fosiles);
 			oos.writeObject(obras);
+			oos.writeObject(giroides);
 			oos.close(); // Escritura (CERRAR)
 		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
 			e.printStackTrace();
@@ -67,7 +72,7 @@ public class Datos {
 	/****[EXPOSICIONES]*****************************************************************************************************************/
 	/****Seres Vivos: Bichos************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
-		ArrayList<Coleccionable> bichos = new ArrayList<>();
+		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
 		
 		// nombre
 		temporada = reloadTemporada();
@@ -92,7 +97,7 @@ public class Datos {
 
 	/****Seres Vivos: Peces*************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
-		ArrayList<Coleccionable> peces = new ArrayList<>();
+		ArrayList<Coleccionable> peces = new ArrayList<Coleccionable>();
 
 		// Amarguillo
 		temporada = reloadTemporada();
@@ -947,7 +952,7 @@ public class Datos {
 
 	/****Seres Vivos: Submarinos********************************************************************************************************/
 	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
-		ArrayList<Coleccionable> submarinos = new ArrayList<>();
+		ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
 
 		// nombre
 		temporada = reloadTemporada();
@@ -969,11 +974,10 @@ public class Datos {
 
 		return submarinos;
 	}
-	
-	
+		
 	//***Reinicia el valor de la temporada**********************************************************************************************/
 	private static HashMap<String, Boolean> reloadTemporada() {
-		HashMap<String, Boolean> temporadaVacia = new HashMap<>();
+		HashMap<String, Boolean> temporadaVacia = new HashMap<String, Boolean>();
 
 		temporadaVacia.put("Enero", false); // 1
 		temporadaVacia.put("Febrero", false); // 2
@@ -998,7 +1002,7 @@ public class Datos {
 
 	/****Fosiles************************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
-		ArrayList<Coleccionable> fosiles = new ArrayList<>();
+		ArrayList<Coleccionable> fosiles = new ArrayList<Coleccionable>();
 		ArrayList<Fragmento> fragmentos;
 
 		// FRAGMENTOS MULTIPLES
@@ -1198,7 +1202,7 @@ public class Datos {
 
 	/****Obras de Arte******************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
-		ArrayList<Coleccionable> obras = new ArrayList<>();
+		ArrayList<Coleccionable> obras = new ArrayList<Coleccionable>();
 
 		// CUADROS
 		obras.add(new Obra("Bodegón", "Manzanas y naranjas", "Paul Cézanne", TipoObra.CUADRO));
@@ -1250,5 +1254,52 @@ public class Datos {
 		guardarDatos(ficheroObras, obras);
 
 		return obras;
+	}
+
+	/****[COLECCIONABLES]***************************************************************************************************************/
+	/****Giroides***********************************************************************************************************************/
+	private static ArrayList<Coleccionable> loadGiroides(File ficheroGiroides) {
+		ArrayList<Coleccionable> giroides = new ArrayList<Coleccionable>();
+		
+		giroides.add(new Giroide("Acolchoida"));
+		giroides.add(new Giroide("Agitoide"));
+		giroides.add(new Giroide("Aletensoide"));
+		giroides.add(new Giroide("Aluminoide"));
+		giroides.add(new Giroide("Arcoviol"));
+		giroides.add(new Giroide("Arrugandia"));
+		giroides.add(new Giroide("Bipoide"));
+		giroides.add(new Giroide("Bomboina"));
+		giroides.add(new Giroide("Cacharroide"));
+		giroides.add(new Giroide("Cascabela"));
+		giroides.add(new Giroide("Castañoide"));
+		giroides.add(new Giroide("Clavicoina"));
+		giroides.add(new Giroide("Dulzoide"));
+		giroides.add(new Giroide("Estrujónido"));
+		giroides.add(new Giroide("Figaroide"));
+		giroides.add(new Giroide("Flopoide"));
+		giroides.add(new Giroide("Gomicoida"));
+		giroides.add(new Giroide("Hablaseroide"));
+		giroides.add(new Giroide("Hidroide"));
+		giroides.add(new Giroide("Ladroide"));
+		giroides.add(new Giroide("Mirlitoide"));
+		giroides.add(new Giroide("Monotoide"));
+		giroides.add(new Giroide("Muelloide"));
+		giroides.add(new Giroide("Oinkoide"));
+		giroides.add(new Giroide("Pinchoide"));
+		giroides.add(new Giroide("Platoide"));
+		giroides.add(new Giroide("Puntoide"));
+		giroides.add(new Giroide("Rasgueoide"));
+		giroides.add(new Giroide("Reverberoide"));
+		giroides.add(new Giroide("Silboide"));
+		giroides.add(new Giroide("Sinusoide"));
+		giroides.add(new Giroide("Tetracordia"));
+		giroides.add(new Giroide("Varítono"));
+		giroides.add(new Giroide("Vibroide"));
+		giroides.add(new Giroide("Xilofoide"));
+		giroides.add(new Giroide("Zumbínida"));
+
+		guardarDatos(ficheroGiroides, giroides);
+
+		return giroides;
 	}
 }
