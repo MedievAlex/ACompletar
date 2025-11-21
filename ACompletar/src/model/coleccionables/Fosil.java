@@ -1,31 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.coleccionables;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-/**
- *
- * @author 2dami
- */
-public class Fosil implements Serializable {
-        
-    private String nombre;
-    private ArrayList<Fragmento> fragmentos;
+public class Fosil extends Coleccionable implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private ArrayList<Fragmento> fragmentos;
     private boolean completo;
     
-    public Fosil(String nombre) {
-        this.nombre = nombre;
-        this.fragmentos = new ArrayList<>();
+    public Fosil(String nombre, ArrayList<Fragmento> fragmentos) {
+        super(nombre);
+        this.fragmentos = fragmentos;
         this.completo = false;
-    }
-
-    public String getNombre() {
-        return nombre;
     }
     
     public ArrayList<Fragmento> getFragmentos() {
@@ -41,6 +29,24 @@ public class Fosil implements Serializable {
     }
     
     public void setCompleto() {
+        int cantFragmentos = fragmentos.size();
         
+        for(Fragmento fragmento : fragmentos) {
+        	if(fragmento.isDonado()) {
+        		cantFragmentos--;
+        	}
+        }
+        
+        if(cantFragmentos == 0) {
+        	completo = true;
+        }
+        else {
+        	completo = false;
+        }
     }
+
+	@Override
+	public String toString() {
+		return super.toString() + "\n   | Completo: " + completo + "\n   | Fragmentos: " + fragmentos.toString();
+	}
 }

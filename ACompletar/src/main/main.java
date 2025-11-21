@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 import model.coleccionables.*;
+import model.coleccionables.servivo.Pez;
+import model.coleccionables.servivo.SerVivo;
 import model.data.*;
 import utilidades.Utilidades;
 
@@ -44,19 +46,19 @@ public class main {
 			System.out.println("***************************************");
 
 			switch(opcion) {
-			case 1: 
+			case 1: // 1. Mostrar BICHOS
 
 				break;
-			case 2: 
+			case 2: // Mostrar PECES
 				mostrarPeces(ficheroPeces);
 				break;
-			case 3: 
+			case 3: // Mostrar FOSILES
+				mostrarFosiles(ficheroFosiles);
+				break;
+			case 4: // Mostrar OBRAS DE ARTE
 
 				break;
-			case 4: 
-
-				break;
-			case 5: 
+			case 5: // Mostrar MUSEO
 
 				break;
 			case 6: 
@@ -99,6 +101,43 @@ public class main {
 								numero++;
 								System.out.println("---------------------------------------");
 							}
+						}
+					} catch (EOFException e) { // Fin del archivo alcanzado
+						finArchivo = true;
+					}
+				}
+				ois.close();  // Lectura (CERRAR)
+			} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) { // Excepcion no es de la misma clase o no se ha encontrado
+				e.printStackTrace();
+			} catch (IOException e) { // Excepcion error al acceder al fichero
+				e.printStackTrace();
+			} catch(Exception e) {
+				System.err.println("\n[FATAL ERROR]");
+			}
+		}else {
+			System.err.println("[ERROR] Fichero no encontrado.");
+		}
+	}	
+
+	public static void mostrarFosiles(File ficheroFosiles){
+		ObjectInputStream ois = null; // Lectura
+		boolean finArchivo = false;
+		int numero = 1;
+
+		if(ficheroFosiles.exists()){
+			try {
+				ois = new ObjectInputStream(new FileInputStream(ficheroFosiles)); // Lectura
+				System.out.println("[FOSILES]");
+				System.out.println("---------------------------------------");
+				while (!finArchivo) {
+					try{
+						Coleccionable coleccionable = (Coleccionable) ois.readObject();
+						if(coleccionable instanceof Fosil) {
+							System.out.println(numero+ "-" + ((Fosil)coleccionable).toString());
+							numero++;
+							System.out.println("---------------------------------------");
 						}
 					} catch (EOFException e) { // Fin del archivo alcanzado
 						finArchivo = true;

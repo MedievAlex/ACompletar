@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import model.Frecuencia;
 import model.Habitad;
-import model.coleccionables.Bicho;
 import model.coleccionables.Coleccionable;
 import model.coleccionables.Fosil;
 import model.coleccionables.Fragmento;
 import model.coleccionables.Obra;
-import model.coleccionables.Pez;
+import model.coleccionables.servivo.Bicho;
+import model.coleccionables.servivo.Pez;
 
 public class Datos {
 
@@ -912,11 +912,198 @@ public class Datos {
 
 	// Seccion Fosiles
 	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
-		temporada = reloadTemporada();
-
 		ArrayList<Coleccionable> fosiles = new ArrayList<>();
-		Fosil fosil;
-		Fragmento fragmento;
+		ArrayList<Fragmento> fragmentos;
+
+		// FRAGMENTOS MULTIPLES
+		// Anquilosaurio  
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo anquilosaurio"));
+		fragmentos.add(new Fragmento("Cuerpo anquilosaurio"));
+		fragmentos.add(new Fragmento("Cola anquilosaurio"));
+		fosiles.add(new Fosil("Anquilosaurio", fragmentos));
+
+		// Archelon   
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cuerpo archelon"));
+		fragmentos.add(new Fragmento("Cola archelon"));
+		fosiles.add(new Fosil("Archelon", fragmentos));
+
+		// Braquiosaurio   
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo braquiosaurio"));
+		fragmentos.add(new Fragmento("Tórax braquiosaurio"));
+		fragmentos.add(new Fragmento("Pelvis braquiosaurio"));
+		fragmentos.add(new Fragmento("Cola braquiosaurio"));
+		fosiles.add(new Fosil("Braquiosaurio", fragmentos));
+
+		// Brontoterio    
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo brontoterio"));
+		fragmentos.add(new Fragmento("Cuerpo brontoterio"));
+		fragmentos.add(new Fragmento("Cola brontoterio"));
+		fosiles.add(new Fosil("Brontoterio", fragmentos));
+
+		// Deinonico    
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cuerpo deinonico"));
+		fragmentos.add(new Fragmento("Cola deinonico"));
+		fosiles.add(new Fosil("Deinonico", fragmentos));
+
+		// Dientes de sable    
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cuerpo tigre dientes sable"));
+		fragmentos.add(new Fragmento("Cola tigre dientes sable"));
+		fosiles.add(new Fosil("Dientes de sable", fragmentos));
+
+		// Dimetrodonte     
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo dimetrodonte"));
+		fragmentos.add(new Fragmento("Cuerpo dimetrodonte"));
+		fosiles.add(new Fosil("Dimetrodonte", fragmentos));
+
+		// Diplodocus      
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo diplodocus"));
+		fragmentos.add(new Fragmento("Cuello diplodocus"));
+		fragmentos.add(new Fragmento("Tórax diplodocus"));
+		fragmentos.add(new Fragmento("Pelvis diplodocus"));
+		fragmentos.add(new Fragmento("Cola diplodocus"));
+		fragmentos.add(new Fragmento("Punta de cola diplodocus"));
+		fosiles.add(new Fosil("Diplodocus", fragmentos));
+
+		// Espinosaurio     
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo espinosaurio"));
+		fragmentos.add(new Fragmento("Cuerpo espinosaurio"));
+		fragmentos.add(new Fragmento("Cola espinosaurio"));
+		fosiles.add(new Fosil("Espinosaurio", fragmentos));
+
+		// Estegosaurio      
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo estegosaurio"));
+		fragmentos.add(new Fragmento("Cuerpo estegosaurio"));
+		fragmentos.add(new Fragmento("Cola estegosaurio"));
+		fosiles.add(new Fosil("Estegosaurio", fragmentos));
+
+		// Iguanodonte       
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo iguanodonte"));
+		fragmentos.add(new Fragmento("Cuerpo iguanodonte"));
+		fragmentos.add(new Fragmento("Cola iguanodonte"));
+		fosiles.add(new Fosil("Iguanodonte", fragmentos));
+
+		// Mamut      
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo mamut"));
+		fragmentos.add(new Fragmento("Cuerpo mamut"));
+		fosiles.add(new Fosil("Mamut", fragmentos));		
+
+		// Megaloceros       
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Mitad izq. Megaloceros"));
+		fragmentos.add(new Fragmento("Mitad derecha megaloceros"));
+		fosiles.add(new Fosil("Megaloceros", fragmentos));
+
+		// Oftalmosaurio      
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo oftalmosaurio"));
+		fragmentos.add(new Fragmento("Cuerpo oftalmosaurio"));
+		fosiles.add(new Fosil("Oftalmosaurio", fragmentos));			
+
+		// Paquicefalosaurio     
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cuerpo paquicefalosaurio"));
+		fragmentos.add(new Fragmento("Cola paquicefalosaurio"));
+		fosiles.add(new Fosil("Paquicefalosaurio", fragmentos));
+
+		// Parasaurio        
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo parasaurio"));
+		fragmentos.add(new Fragmento("Cuerpo parasaurio"));
+		fragmentos.add(new Fragmento("Cola parasaurio"));
+		fosiles.add(new Fosil("Parasaurio", fragmentos));		
+
+		// Plesiosaurio        
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo plesiosaurio"));
+		fragmentos.add(new Fragmento("Torso plesiosaurio"));
+		fragmentos.add(new Fragmento("Cola plesiosaurio"));
+		fosiles.add(new Fosil("Plesiosaurio", fragmentos));			
+
+		// Pteranodonte 
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Ala izquierda pteranodonte"));
+		fragmentos.add(new Fragmento("Cuerpo pteranodonte"));
+		fragmentos.add(new Fragmento("Ala derecha pteranodonte"));
+		fosiles.add(new Fosil("Pteranodonte", fragmentos));
+
+		// Quetzalcoatlus  
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Ala izquierda quetzalcoatlus"));
+		fragmentos.add(new Fragmento("Cuerpo quetzalcoatlus"));
+		fragmentos.add(new Fragmento("Ala derecha quetzalcoatlus"));
+		fosiles.add(new Fosil("Quetzalcoatlus", fragmentos));
+		
+		// Tiranosaurio         
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo tiranosaurio"));
+		fragmentos.add(new Fragmento("Cuerpo tiranosaurio"));
+		fragmentos.add(new Fragmento("Cola tiranosaurio"));
+		fosiles.add(new Fosil("Tiranosaurio", fragmentos));
+		
+		// Triceratops         
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Cráneo triceratops"));
+		fragmentos.add(new Fragmento("Cuerpo triceratops"));
+		fragmentos.add(new Fragmento("Cola triceratops"));
+		fosiles.add(new Fosil("Triceratops", fragmentos));
+		
+		// FRAGMENTOS ÚNICOS
+		fragmentos = new ArrayList<>();
+		fragmentos.add(new Fragmento("Único"));
+		
+		// Acantostega
+		fosiles.add(new Fosil("Acantostega", fragmentos));
+		
+		// Ámbar
+		fosiles.add(new Fosil("Ámbar", fragmentos));	
+		
+		// Amonites
+		fosiles.add(new Fosil("Amonites", fragmentos));
+		
+		// Anomalocaris
+		fosiles.add(new Fosil("Anomalocaris", fragmentos));
+		
+		// Arqueoptérix
+		fosiles.add(new Fosil("Arqueoptérix", fragmentos));	
+		
+		// Australopiteco
+		fosiles.add(new Fosil("Australopiteco", fragmentos));	
+		
+		// Coprolito
+		fosiles.add(new Fosil("Coprolito", fragmentos));
+		
+		// Dunkleosteo
+		fosiles.add(new Fosil("Dunkleosteo", fragmentos));	
+		
+		// Eustenopteron
+		fosiles.add(new Fosil("Eustenopteron", fragmentos));
+		
+		// Huella de dinosaurio
+		fosiles.add(new Fosil("Huella de dinosaurio", fragmentos));
+		
+		// Juramaia
+		fosiles.add(new Fosil("Juramaia", fragmentos));	
+		
+		// Mandíbula de tiburón
+		fosiles.add(new Fosil("Mandíbula de tiburón", fragmentos));
+		
+		// Myllokunmingia
+		fosiles.add(new Fosil("Myllokunmingia", fragmentos));	
+		
+		// Trilobites
+		fosiles.add(new Fosil("Trilobites", fragmentos));
 
 		guardarDatos(ficheroFosiles, fosiles);
 
