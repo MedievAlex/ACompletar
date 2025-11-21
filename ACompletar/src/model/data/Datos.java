@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import model.Frecuencia;
 import model.Habitad;
+import model.TipoObra;
 import model.coleccionables.Coleccionable;
 import model.coleccionables.exposiciones.Fosil;
 import model.coleccionables.exposiciones.Fragmento;
@@ -1155,11 +1156,55 @@ public class Datos {
 
 	/****Obras de Arte******************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
-		temporada = reloadTemporada();
-
 		ArrayList<Coleccionable> obras = new ArrayList<>();
-		Obra obra;
 
+		// CUADROS
+		obras.add(new Obra("Bodegón", "Manzanas y naranjas", "Paul Cézanne", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro alegórico", "El nacimiento de Venus", "Sandro Botticelli", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro anatómico", "Hombre de Vitruvio", "Leonardo da Vinci", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro clásico", "La maja vestida", "Francisco de Goya", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro dama", "Un bar del Folies-Bergère", "Édouard Manet", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro detallado", "Ajisai Sōkeizu", "Itō Jakuchū", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro español", "Las meninas", "Diego Velázquez", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro flores", "Girasoles", "Vincent van Gogh", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro holandés", "La ronda de noche", "Rembrandt van Rijn", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro invernal", "Los cazadores en la nieve", "Pieter Brueghel el Viejo", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro japonés", "Otani Oniji III como Yakko Edobei", "Tōshūsai Sharaku", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro literario", "Ofelia", "John Everett Millais", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro naturaleza (dcha.)", "Biombo de Fūjin y Raijin (derecha)", "Tawaraya Sōtatsu", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro naturaleza (izda.)", "Biombo de Fūjin y Raijin (izquierda)", "Tawaraya Sōtatsu", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro ola", "Treinta y seis vistas del monte Fuji", "Katsushika Hokusai", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro orgánico", "Verano", "Giuseppe Arcimboldo", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro romántico", "La Libertad guiando al pueblo", "Eugène Delacroix", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro segadoras", "Las espigadoras", "Jean-François Millet", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro tenebroso", "La isla de los muertos", "Arnold Böcklin", TipoObra.CUADRO));
+		obras.add(new Obra("Cuadro vespertino", "El Temerario", "Joseph Mallord William Turner", TipoObra.CUADRO));
+		obras.add(new Obra("Paisaje estrellado", "La noche estrellada", "Vincent van Gogh", TipoObra.CUADRO));
+		obras.add(new Obra("Paisaje francés", "Tarde de domingo", "Georges Seurat", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato heroico", "El niño azul", "Thomas Gainsborough", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato holandés", "La lechera", "Johannes Vermeer", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato italiano", "La Mona Lisa", "Leonardo da Vinci", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato joven", "El sembrador", "Jean-François Millet", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato músico", "El pífano", "Édouard Manet", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato oriental", "Mujer mirando hacia atrás", "Hishikawa Moronobu", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato perla", "La joven de la perla", "Johannes Vermeer", TipoObra.CUADRO));
+		obras.add(new Obra("Retrato regio", "La dama del armiño", "Leonardo da Vinci", TipoObra.CUADRO));
+		
+		// ESCULTURAS
+		obras.add(new Obra("Busto antiguo", "Busto de Nefertiti", "Thutmose", TipoObra.ESCULTURA));
+		obras.add(new Obra("Cabeza colosal", "Cabeza colosal olmeca", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua alada", "Victoria de Samotracia", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua atlética", "Discóbolo", "Mirón de Eléuteras", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua femenina", "Venus de Milo", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua guerrera", "Guerrero de terracota", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua majestuosa", "David", "Miguel Ángel", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua pensativa", "El pensador", "Auguste Rodin", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua primitiva", "Estatuilla dogu del periodo Jomon", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Estatua triunfante", "Rey Kamehameha I", "Thomas Ridgeway Gould", TipoObra.ESCULTURA));
+		obras.add(new Obra("Figura materna", "Loba capitolina", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Piedra políglota", "Piedra de Rosetta", "Desconocido", TipoObra.ESCULTURA));
+		obras.add(new Obra("Urna imponente", "Houmuwu ding", "Desconocido", TipoObra.ESCULTURA));
+		
 		guardarDatos(ficheroObras, obras);
 
 		return obras;

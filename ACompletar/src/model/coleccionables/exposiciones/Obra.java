@@ -1,58 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.coleccionables.exposiciones;
 
 import java.io.Serializable;
-import java.util.HashMap;
 
-/**
- *
- * @author 2dami
- */
-public class Obra implements Serializable {
+import model.TipoObra;
 
+public class Obra extends Exposicion implements Serializable { 
+
+	private static final long serialVersionUID = 1L;
+	        
     private String nombre;
-    private HashMap<String, Boolean> meses;
-    private String horiario;
-    private boolean obtenido;
-    private boolean donado;
+    private String descripcion;
+    private String autor;
+    private TipoObra tipo;
 
-    public Obra(String nombre, HashMap<String, Boolean> meses, String horario) {
-        this.nombre = nombre;
-        this.meses = meses;
-        this.horiario = horario;
-        this.obtenido = false;
-        this.donado = false;
+    public Obra(String nombre, String descripcion, String autor, TipoObra tipo) {
+    	super(nombre);
+    	this.descripcion = descripcion;
+    	this.autor = autor;
+    	this.tipo = tipo;
     }
 
     public String getNombre() {
         return nombre;
     }
+    
+    public String getDescripcion() {
+		return descripcion;
+	}
 
-    public HashMap<String, Boolean> getMeses() {
-        return meses;
+	public String getAutor() {
+		return autor;
+	}
+
+	public TipoObra getTipoObra() {
+        return tipo;
     }
 
-    public String getHoriario() {
-        return horiario;
-    }
-
-    public boolean isObtenido() {
-        return obtenido;
-    }
-
-    public void setObtenido(boolean obtenido) {
-        this.obtenido = obtenido;
-    }
-
-    public boolean isDonado() {
-        return donado;
-    }
-
-    public void setDonado(boolean donado) {
-        this.donado = donado;
-    }
+	@Override
+	public String toString() {
+		return super.toString() + "\n   | Descripcion: " + descripcion  + "\n   | Autor: " + autor + "\n   | Tipo de Obra: " + tipo;
+	}
 }
