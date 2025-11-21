@@ -21,7 +21,7 @@ public class Datos {
 	private static ObjectOutputStream oos = null; // Escritura
 	private static HashMap<String, Boolean> temporada;
 
-	/****Carga los datos de los coleccionables******************************************************************************************/
+	//***Carga los datos de los coleccionables******************************************************************************************/
 	public static void loadData(File ficheroMuseo, File ficheroBichos, File ficheroPeces, File ficheroFosiles, File ficheroObras) {
 		ArrayList<Coleccionable> bichos = loadBichos(ficheroBichos);
 		ArrayList<Coleccionable> peces = loadPeces(ficheroPeces);
@@ -44,7 +44,23 @@ public class Datos {
 		}
 	}
 
-	/****[EXPOSICIONES: SERES VIVOS]****************************************************************************************************/
+	//***Guarda los datos en los ficheros individuales**********************************************************************************/
+	private static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
+		try {
+			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
+			for (Coleccionable coleccionable : lista) {
+				oos.writeObject(coleccionable);
+			}
+		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
+			e.printStackTrace();
+		} catch (IOException e) { // Excepcion error al acceder al fichero
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("\n[FATAL ERROR]");
+		}
+	}
+
+	/****[EXPOSICIONES]*****************************************************************************************************************/
 	/****Seres Vivos: Bichos************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		temporada = reloadTemporada();
@@ -912,7 +928,7 @@ public class Datos {
 		return peces;
 	}
 
-	// Reinicia el valor de la temporada
+	//***Reinicia el valor de la temporada**********************************************************************************************/
 	private static HashMap<String, Boolean> reloadTemporada() {
 		HashMap<String, Boolean> temporadaVacia = new HashMap<>();
 
@@ -931,13 +947,13 @@ public class Datos {
 
 		return temporadaVacia;
 	}
-	
-	// Registra el mes en la temporada
+
+	//***Registra el mes en la temporada************************************************************************************************/
 	private static void loadInTemporada(String mes) {
 		temporada.replace(mes, true);
 	}
-	
-	/****Coleccionables: Fosiles********************************************************************************************************/
+
+	/****Fosiles************************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
 		ArrayList<Coleccionable> fosiles = new ArrayList<>();
 		ArrayList<Fragmento> fragmentos;
@@ -1137,8 +1153,7 @@ public class Datos {
 		return fosiles;
 	}
 
-	// Seccion Obras de Arte
-	/****Coleccionables: Obras de Arte**************************************************************************************************/
+	/****Obras de Arte******************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
 		temporada = reloadTemporada();
 
@@ -1148,24 +1163,5 @@ public class Datos {
 		guardarDatos(ficheroObras, obras);
 
 		return obras;
-	}
-	
-	// Reinicia la lista de temporada
-
-
-	// Guarda los datos en los ficheros individuales
-	private static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
-		try {
-			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
-			for (Coleccionable coleccionable : lista) {
-				oos.writeObject(coleccionable);
-			}
-		} catch (FileNotFoundException e) { // Excepcion no se ha encontrado el Fichero
-			e.printStackTrace();
-		} catch (IOException e) { // Excepcion error al acceder al fichero
-			e.printStackTrace();
-		} catch (Exception e) {
-			System.err.println("\n[FATAL ERROR]");
-		}
 	}
 }
