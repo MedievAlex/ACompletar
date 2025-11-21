@@ -10,11 +10,11 @@ import java.util.HashMap;
 import model.Frecuencia;
 import model.Habitad;
 import model.coleccionables.Coleccionable;
-import model.coleccionables.Fosil;
-import model.coleccionables.Fragmento;
-import model.coleccionables.Obra;
-import model.coleccionables.servivo.Bicho;
-import model.coleccionables.servivo.Pez;
+import model.coleccionables.exposiciones.Fosil;
+import model.coleccionables.exposiciones.Fragmento;
+import model.coleccionables.exposiciones.Obra;
+import model.coleccionables.exposiciones.servivo.Bicho;
+import model.coleccionables.exposiciones.servivo.Pez;
 
 public class Datos {
 

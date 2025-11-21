@@ -1,7 +1,9 @@
-package model.coleccionables;
+package model.coleccionables.exposiciones;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+
+import model.coleccionables.Coleccionable;
 
 public class Fosil extends Coleccionable implements Serializable {
 

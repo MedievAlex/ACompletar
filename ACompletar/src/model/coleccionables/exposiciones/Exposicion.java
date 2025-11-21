@@ -1,25 +1,22 @@
-package model.coleccionables;
+package model.coleccionables.exposiciones;
 
 import java.io.Serializable;
 
-public class Fragmento implements Serializable { 
+import model.coleccionables.Coleccionable;
 
-	private static final long serialVersionUID = 1L;
-	        
-    private String nombre;
+public class Exposicion extends Coleccionable implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     private boolean obtenido;
     private boolean donado;
 
-    public Fragmento(String nombre) {
-        this.nombre = nombre;
+    public Exposicion(String nombre) {
+        super(nombre);
         this.obtenido = false;
         this.donado = false;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
+    
     public boolean isObtenido() {
         return obtenido;
     }
@@ -36,8 +33,8 @@ public class Fragmento implements Serializable {
         this.donado = donado;
     }
 
-	@Override
+    @Override
 	public String toString() {
-		return "\n   |-[ " + nombre + " ]\n   | Obtenido: " + obtenido + " | Donado: " + donado;
+		return super.toString() + "\n   | Obtenido: " + obtenido + " | Donado: " + donado;
 	}
 }

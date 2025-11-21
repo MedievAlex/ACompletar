@@ -8,8 +8,10 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import model.coleccionables.*;
-import model.coleccionables.servivo.Bicho;
-import model.coleccionables.servivo.Pez;
+import model.coleccionables.exposiciones.Fosil;
+import model.coleccionables.exposiciones.Obra;
+import model.coleccionables.exposiciones.servivo.Bicho;
+import model.coleccionables.exposiciones.servivo.Pez;
 
 /**
  *

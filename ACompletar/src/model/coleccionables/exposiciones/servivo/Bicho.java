@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package model.coleccionables.servivo;
+package model.coleccionables.exposiciones.servivo;
 
 import java.io.Serializable;
 import java.util.HashMap;
 
-/**
- *
- * @author 2dami
- */
 public class Bicho extends SerVivo implements Serializable {
 
     private static final long serialVersionUID = 1L;

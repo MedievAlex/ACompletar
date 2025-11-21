@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package main;
 
 import java.io.EOFException;
@@ -13,19 +8,16 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 import model.coleccionables.*;
-import model.coleccionables.servivo.Pez;
-import model.coleccionables.servivo.SerVivo;
+import model.coleccionables.exposiciones.Fosil;
+import model.coleccionables.exposiciones.servivo.Pez;
+import model.coleccionables.exposiciones.servivo.SerVivo;
 import model.data.*;
 import utilidades.Utilidades;
 
-/**
- *
- * @author 2dami
- */
 public class main {
 
 	public static void main(String[] args) {
-		String directoryPath = "ficheros/";
+		String directoryPath = "data/";
 		File ficheroMuseo = new File(directoryPath + "museo.ac");
 		File ficheroBichos = new File(directoryPath + "bichos.ac");
 		File ficheroPeces = new File(directoryPath + "peces.ac");

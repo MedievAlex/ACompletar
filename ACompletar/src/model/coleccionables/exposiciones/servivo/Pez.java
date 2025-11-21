@@ -1,4 +1,4 @@
-package model.coleccionables.servivo;
+package model.coleccionables.exposiciones.servivo;
 
 import java.io.Serializable;
 import java.util.HashMap;
