@@ -72,6 +72,8 @@ public class Datos {
 	/****Capturapedia: Bichos***********************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
+		ArrayList<String> horario;
+		ArrayList<String> condicion;
 
 		// Abeja melífera
 		temporada = reloadTemporada();
@@ -80,7 +82,11 @@ public class Datos {
 		loadInTemporada("Mayo");
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
-		bichos.add(new Bicho("Abeja melífera", temporada, "8:00 - 17:00", "Cerca de flores", "Sin lluvia"));
+		horario = new ArrayList<String>();
+		horario.add("8:00 - 17:00");
+		condicion = new ArrayList<String>();
+		condicion.add("Sin lluvia");
+		bichos.add(new Bicho("Abeja melífera", temporada, horario, "Cerca de flores", condicion));
 
 		// Araña
 		temporada = reloadTemporada();
@@ -96,7 +102,11 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("Araña", temporada, "19:00 - 8:00", "Sacudiendo árboles frutales", "-"));
+		horario = new ArrayList<String>();
+		horario.add("19:00 - 8:00");
+		condicion = new ArrayList<String>();
+		condicion.add("Sin condiciones especiales");
+		bichos.add(new Bicho("Araña", temporada, horario, "Sacudiendo árboles frutales", condicion));
 
 		// Avispa
 		temporada = reloadTemporada();
@@ -112,7 +122,11 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("Avispa", temporada, "24h", "Sacudiendo árboles no frutales", "#"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		condicion = new ArrayList<String>();
+		condicion.add("5 al día como máximo");
+		bichos.add(new Bicho("Avispa", temporada, horario, "Sacudiendo árboles no frutales", condicion));
 
 		// Cangrejo ermitaño
 		temporada = reloadTemporada();
@@ -128,7 +142,11 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("Cangrejo ermitaño", temporada, "19:00 - 8:00", "Playas", "-"));
+		horario = new ArrayList<String>();
+		horario.add("19:00 - 8:00");
+		condicion = new ArrayList<String>();
+		condicion.add("Sin condiciones especiales");
+		bichos.add(new Bicho("Cangrejo ermitaño", temporada, horario, "Playas", condicion));
 
 		// Caracol
 		temporada = reloadTemporada();
@@ -144,7 +162,11 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("Caracol", temporada, "24h", "Sobre rocas o arbustos", "Con lluvia"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		condicion = new ArrayList<String>();
+		condicion.add("Con lluvia");
+		bichos.add(new Bicho("Caracol", temporada, horario, "Sobre rocas o arbustos", condicion));
 
 		// Chinche
 		temporada = reloadTemporada();
@@ -156,7 +178,11 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		bichos.add(new Bicho("Chinche", temporada, "24h", "Cerca de flores", "Sin lluvia"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		condicion = new ArrayList<String>();
+		condicion.add("Sin lluvia");
+		bichos.add(new Bicho("Chinche", temporada, horario, "Cerca de flores", condicion));
 
 		// Chinche acuática gigante
 		temporada = reloadTemporada();
@@ -166,8 +192,13 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		bichos.add(new Bicho("Chinche acuática gigante", temporada, "19:00 - 8:00", "Sobre agua dulce", "50"));
+		horario = new ArrayList<String>();
+		horario.add("19:00 - 8:00");
+		condicion = new ArrayList<String>();
+		condicion.add("Después de cazar 50 bichos en total");
+		bichos.add(new Bicho("Chinche acuática gigante", temporada, horario, "Sobre agua dulce", condicion));
 
+		/*
 		// nombre
 		temporada = reloadTemporada();
 		loadInTemporada("Enero");
@@ -182,1160 +213,13 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
-		// nombre
-		temporada = reloadTemporada();
-		loadInTemporada("Enero");
-		loadInTemporada("Febrero");
-		loadInTemporada("Marzo");
-		loadInTemporada("Abril");
-		loadInTemporada("Mayo");
-		loadInTemporada("Junio");
-		loadInTemporada("Julio");
-		loadInTemporada("Agosto");
-		loadInTemporada("Septiembre");
-		loadInTemporada("Octubre");
-		loadInTemporada("Noviembre");
-		loadInTemporada("Dicienbre");
-		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
-
+		horario = new ArrayList<String>();
+		horario.add();
+		condicion = new ArrayList<String>();
+		condicion.add();
+		bichos.add(new Bicho("nombre", temporada, horario, "obtencion", condicion));
+		*/
+		
 		guardarDatos(ficheroBichos, bichos);
 
 		return bichos;
@@ -1344,6 +228,7 @@ public class Datos {
 	/****Capturapedia: Peces************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
 		ArrayList<Coleccionable> peces = new ArrayList<Coleccionable>();
+		ArrayList<String> horario;
 
 		// Amarguillo
 		temporada = reloadTemporada();
@@ -1352,7 +237,9 @@ public class Datos {
 		loadInTemporada("Marzo");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Diciembre");
-		peces.add(new Pez("Amarguillo", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Amarguillo", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Anguila de listón azul
 		temporada = reloadTemporada();
@@ -1361,7 +248,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Anguila de listón azul", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Anguila de listón azul", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Arowana
 		temporada = reloadTemporada();
@@ -1369,7 +258,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Arowana", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Arowana", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Atún
 		temporada = reloadTemporada();
@@ -1378,14 +269,18 @@ public class Datos {
 		loadInTemporada("Marzo");
 		loadInTemporada("Abril");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Atún", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Atún", temporada, horario, Habitad.MUELLE, Frecuencia.MUYPOCA));
 
 		// Ayu
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Ayu", temporada, "24h", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Ayu", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Betta
 		temporada = reloadTemporada();
@@ -1395,7 +290,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Betta", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Betta", temporada, horario, Habitad.RIO, Frecuencia.MUYPOCA));
 
 		// Bichir ensillado
 		temporada = reloadTemporada();
@@ -1403,7 +300,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Bichir ensillado", temporada, "21:00 - 4:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		peces.add(new Pez("Bichir ensillado", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Boquerón
 		temporada = reloadTemporada();
@@ -1419,7 +318,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Boquerón", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		peces.add(new Pez("Boquerón", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Caballito de mar
 		temporada = reloadTemporada();
@@ -1431,7 +332,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Caballito de mar", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Caballito de mar", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Cacho
 		temporada = reloadTemporada();
@@ -1447,7 +350,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Cacho", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Cacho", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Calamar
 		temporada = reloadTemporada();
@@ -1460,7 +365,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Calamar", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Calamar", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Cangrejo de río
 		temporada = reloadTemporada();
@@ -1470,14 +377,18 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Cangrejo de río", temporada, "24h", Habitad.ESTANQUE, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Cangrejo de río", temporada, horario, Habitad.ESTANQUE, Frecuencia.MUCHA));
 
 		// Cangrejo de Shanghái
 		temporada = reloadTemporada();
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Cangrejo de Shanghái", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Cangrejo de Shanghái", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Carpa
 		temporada = reloadTemporada();
@@ -1493,7 +404,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Carpa", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Carpa", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Carpín
 		temporada = reloadTemporada();
@@ -1509,7 +422,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Carpín", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Carpín", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Celacanto CON LLUVIA
 		temporada = reloadTemporada();
@@ -1525,7 +440,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Celacanto", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Celacanto", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Dorada japonesa
 		temporada = reloadTemporada();
@@ -1538,7 +455,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Dorada japonesa", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Dorada japonesa", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Dorado
 		temporada = reloadTemporada();
@@ -1546,14 +465,18 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Dorado", temporada, "4:00 - 21:00", Habitad.RIO, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		peces.add(new Pez("Dorado", temporada, horario, Habitad.RIO, Frecuencia.MUYPOCA));
 
 		// Eperlano
 		temporada = reloadTemporada();
 		loadInTemporada("Enero");
 		loadInTemporada("Febrero");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Eperlano", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Eperlano", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Esturión
 		temporada = reloadTemporada();
@@ -1564,7 +487,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Esturión", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Esturión", temporada, horario, Habitad.DESEMBOCADURA, Frecuencia.POCA));
 
 		// Gallo
 		temporada = reloadTemporada();
@@ -1575,7 +500,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Gallo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Gallo", temporada, horario, Habitad.MAR, Frecuencia.MUCHA));
 
 		// Gobio de río
 		temporada = reloadTemporada();
@@ -1591,7 +518,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Gobio de río", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Gobio de río", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Gupi
 		temporada = reloadTemporada();
@@ -1603,7 +532,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Gupi", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Gupi", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Jurel
 		temporada = reloadTemporada();
@@ -1619,7 +550,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Jurel", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Jurel", temporada, horario, Habitad.MAR, Frecuencia.MUCHA));
 
 		// Jurel gigante
 		temporada = reloadTemporada();
@@ -1629,7 +562,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Jurel gigante", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Jurel gigante", temporada, horario, Habitad.MUELLE, Frecuencia.MUYPOCA));
 
 		// Killi
 		temporada = reloadTemporada();
@@ -1638,7 +573,9 @@ public class Datos {
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		peces.add(new Pez("Killi", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Killi", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Koi
 		temporada = reloadTemporada();
@@ -1654,7 +591,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Koi", temporada, "16:00h - 9:00h", Habitad.ESTANQUE, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00h - 9:00h");
+		peces.add(new Pez("Koi", temporada, horario, Habitad.ESTANQUE, Frecuencia.POCA));
 
 		// Lampuga
 		temporada = reloadTemporada();
@@ -1664,7 +603,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Lampuga", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Lampuga", temporada, horario, Habitad.MUELLE, Frecuencia.MUYPOCA));
 
 		// Leucisco
 		temporada = reloadTemporada();
@@ -1680,14 +621,18 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Leucisco", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Leucisco", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Locha
 		temporada = reloadTemporada();
 		loadInTemporada("Marzo");
 		loadInTemporada("Abril");
 		loadInTemporada("Mayo");
-		peces.add(new Pez("Locha", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Locha", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Lubina
 		temporada = reloadTemporada();
@@ -1703,7 +648,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Lubina", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Lubina", temporada, horario, Habitad.MAR, Frecuencia.MUCHA));
 
 		// Lucio
 		temporada = reloadTemporada();
@@ -1711,7 +658,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Lucio", temporada, "24h", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Lucio", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Mariposa marina
 		temporada = reloadTemporada();
@@ -1719,14 +668,18 @@ public class Datos {
 		loadInTemporada("Febrero");
 		loadInTemporada("Marzo");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Mariposa marina", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Mariposa marina", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Morena
 		temporada = reloadTemporada();
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Morena", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Morena", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Pargo rojo
 		temporada = reloadTemporada();
@@ -1742,7 +695,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pargo rojo", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pargo rojo", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Perca
 		temporada = reloadTemporada();
@@ -1758,7 +713,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Perca", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Perca", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Perca amarilla
 		temporada = reloadTemporada();
@@ -1768,7 +725,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Perca amarilla", temporada, "24h", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Perca amarilla", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Pez ángel
 		temporada = reloadTemporada();
@@ -1778,7 +737,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Pez ángel", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pez ángel", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Pez arcoíris
 		temporada = reloadTemporada();
@@ -1788,7 +749,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Pez arcoíris", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Pez arcoíris", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Pez balón
 		temporada = reloadTemporada();
@@ -1797,14 +760,18 @@ public class Datos {
 		loadInTemporada("Marzo");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez balón", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pez balón", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez cabeza de serpiente
 		temporada = reloadTemporada();
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		peces.add(new Pez("Pez cabeza de serpiente", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Pez cabeza de serpiente", temporada, horario, Habitad.ESTANQUE, Frecuencia.MUYPOCA));
 
 		// Pez cabeza transparente
 		temporada = reloadTemporada();
@@ -1820,7 +787,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez cabeza transparente", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		peces.add(new Pez("Pez cabeza transparente", temporada, horario, Habitad.MAR, Frecuencia.MUYPOCA));
 
 		// Pez caimán
 		temporada = reloadTemporada();
@@ -1828,7 +797,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez caimán", temporada, "16:00 - 9:00", Habitad.ESTANQUE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pez caimán", temporada, horario, Habitad.ESTANQUE, Frecuencia.MUYPOCA));
 
 		// Pez cirujano
 		temporada = reloadTemporada();
@@ -1838,7 +809,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez cirujano", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez cirujano", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez doctor
 		temporada = reloadTemporada();
@@ -1847,7 +820,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez doctor", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Pez doctor", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Pez dorado
 		temporada = reloadTemporada();
@@ -1863,14 +838,18 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez dorado", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez dorado", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Pez erizo
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez erizo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez erizo", temporada, horario, Habitad.MAR, Frecuencia.MUCHA));
 
 		// Pez espada
 		temporada = reloadTemporada();
@@ -1883,7 +862,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez espada", temporada, "24h", Habitad.MUELLE, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez espada", temporada, horario, Habitad.MUELLE, Frecuencia.MUYPOCA));
 
 		// Pez globo
 		temporada = reloadTemporada();
@@ -1891,7 +872,9 @@ public class Datos {
 		loadInTemporada("Febrero");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez globo", temporada, "21:00 - 4:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		peces.add(new Pez("Pez globo", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez león
 		temporada = reloadTemporada();
@@ -1903,14 +886,18 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Pez león", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez león", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Pez luna
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez luna", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		peces.add(new Pez("Pez luna", temporada, horario, Habitad.MAR, Frecuencia.MUYPOCA));
 
 		// Pez mariposa
 		temporada = reloadTemporada();
@@ -1920,7 +907,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez mariposa", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez mariposa", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Pez martillo
 		temporada = reloadTemporada();
@@ -1928,13 +917,17 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez martillo", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pez martillo", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez napoleón
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		peces.add(new Pez("Pez napoleón", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		peces.add(new Pez("Pez napoleón", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez payaso
 		temporada = reloadTemporada();
@@ -1944,7 +937,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez payaso", temporada, "24h", Habitad.MAR, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez payaso", temporada, horario, Habitad.MAR, Frecuencia.FRECUENTE));
 
 		// Pez remo
 		temporada = reloadTemporada();
@@ -1954,7 +949,9 @@ public class Datos {
 		loadInTemporada("Abril");
 		loadInTemporada("Mayo");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez remo", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Pez remo", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez sierra
 		temporada = reloadTemporada();
@@ -1962,7 +959,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pez sierra", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pez sierra", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Pez sol
 		temporada = reloadTemporada();
@@ -1978,7 +977,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez sol", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Pez sol", temporada, horario, Habitad.RIO, Frecuencia.MUCHA));
 
 		// Pez telescopio
 		temporada = reloadTemporada();
@@ -1994,7 +995,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Pez telescopio", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Pez telescopio", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Piraña
 		temporada = reloadTemporada();
@@ -2002,7 +1005,10 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Piraña", temporada, "9:00 - 16:00 y 21:00 - 4:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		horario.add("21:00 - 4:00");
+		peces.add(new Pez("Piraña", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Pirarucú
 		temporada = reloadTemporada();
@@ -2010,7 +1016,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Pirarucú", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Pirarucú", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Rana
 		temporada = reloadTemporada();
@@ -2018,7 +1026,9 @@ public class Datos {
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		peces.add(new Pez("Rana", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Rana", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Ranchú
 		temporada = reloadTemporada();
@@ -2034,7 +1044,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Ranchú", temporada, "9:00 - 16:00", Habitad.ESTANQUE, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Ranchú", temporada, horario, Habitad.ESTANQUE, Frecuencia.POCA));
 
 		// Raya
 		temporada = reloadTemporada();
@@ -2042,7 +1054,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Raya", temporada, "4:00 - 21:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		peces.add(new Pez("Raya", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Rémora
 		temporada = reloadTemporada();
@@ -2050,7 +1064,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Rémora", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Rémora", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Renacuajo
 		temporada = reloadTemporada();
@@ -2059,7 +1075,9 @@ public class Datos {
 		loadInTemporada("Mayo");
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
-		peces.add(new Pez("Renacuajo", temporada, "24h", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Renacuajo", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Rodaballo
 		temporada = reloadTemporada();
@@ -2075,12 +1093,16 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Rodaballo", temporada, "24h", Habitad.MAR, Frecuencia.MUCHA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Rodaballo", temporada, horario, Habitad.MAR, Frecuencia.MUCHA));
 
 		// Salmón
 		temporada = reloadTemporada();
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Salmón", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Salmón", temporada, horario, Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
 
 		// Salmón japonés
 		temporada = reloadTemporada();
@@ -2091,12 +1113,16 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Salmón japonés", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Salmón japonés", temporada, horario, Habitad.CASCADA, Frecuencia.POCA));
 
 		// Salmón real
 		temporada = reloadTemporada();
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Salmón real", temporada, "24h", Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Salmón real", temporada, horario, Habitad.DESEMBOCADURA, Frecuencia.FRECUENTE));
 
 		// Siluro
 		temporada = reloadTemporada();
@@ -2106,7 +1132,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Siluro", temporada, "16:00 - 9:00", Habitad.ESTANQUE, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Siluro", temporada, horario, Habitad.ESTANQUE, Frecuencia.FRECUENTE));
 
 		// Taimén
 		temporada = reloadTemporada();
@@ -2114,7 +1142,9 @@ public class Datos {
 		loadInTemporada("Febrero");
 		loadInTemporada("Marzo");
 		loadInTemporada("Dicienbre");
-		peces.add(new Pez("Taimén", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Taimén", temporada, horario, Habitad.CASCADA, Frecuencia.MUYPOCA));
 
 		// Tetra neón
 		temporada = reloadTemporada();
@@ -2126,7 +1156,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Tetra neón", temporada, "9:00 - 16:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		peces.add(new Pez("Tetra neón", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Tiburón
 		temporada = reloadTemporada();
@@ -2134,7 +1166,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Tiburón", temporada, "16:00 - 9:00", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Tiburón", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Tiburón ballena
 		temporada = reloadTemporada();
@@ -2142,7 +1176,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Tiburón ballena", temporada, "24h", Habitad.MAR, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Tiburón ballena", temporada, horario, Habitad.MAR, Frecuencia.POCA));
 
 		// Tilapia
 		temporada = reloadTemporada();
@@ -2151,13 +1187,17 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Tilapia", temporada, "24h", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		peces.add(new Pez("Tilapia", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Tortuga caparazón blando
 		temporada = reloadTemporada();
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		peces.add(new Pez("Tortuga caparazón blando", temporada, "16:00 - 9:00", Habitad.RIO, Frecuencia.FRECUENTE));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Tortuga caparazón blando", temporada, horario, Habitad.RIO, Frecuencia.FRECUENTE));
 
 		// Tortuga mordedora
 		temporada = reloadTemporada();
@@ -2168,7 +1208,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		peces.add(new Pez("Tortuga mordedora", temporada, "21:00 - 4:00", Habitad.RIO, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		peces.add(new Pez("Tortuga mordedora", temporada, horario, Habitad.RIO, Frecuencia.POCA));
 
 		// Trucha
 		temporada = reloadTemporada();
@@ -2179,7 +1221,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Trucha", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.POCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Trucha", temporada, horario, Habitad.CASCADA, Frecuencia.POCA));
 
 		// Trucha dorada
 		temporada = reloadTemporada();
@@ -2189,7 +1233,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		peces.add(new Pez("Trucha dorada", temporada, "16:00 - 9:00", Habitad.CASCADA, Frecuencia.MUYPOCA));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		peces.add(new Pez("Trucha dorada", temporada, horario, Habitad.CASCADA, Frecuencia.MUYPOCA));
 
 		guardarDatos(ficheroPeces, peces);
 
@@ -2199,6 +1245,7 @@ public class Datos {
 	/****Capturapedia: Submarinos*******************************************************************************************************/
 	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
 		ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
+		ArrayList<String> horario;
 
 		// Abulón
 		temporada = reloadTemporada();
@@ -2210,7 +1257,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Abulón", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Abulón", temporada, horario));
 
 		// Alga wakame
 		temporada = reloadTemporada();
@@ -2224,7 +1273,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Alga wakame", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Alga wakame", temporada, horario));
 
 		// Anémona
 		temporada = reloadTemporada();
@@ -2240,7 +1291,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Anémona", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Anémona", temporada, horario));
 
 		// Anguila jardinera
 		temporada = reloadTemporada();
@@ -2250,7 +1303,9 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		submarinos.add(new Submarino("Anguila jardinera", temporada, "4:00 - 21:00"));
+		horario = new ArrayList<String>();
+		horario.add("4:00 - 21:00");
+		submarinos.add(new Submarino("Anguila jardinera", temporada, horario));
 
 		// Babosa de mar
 		temporada = reloadTemporada();
@@ -2266,7 +1321,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Babosa de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Babosa de mar", temporada, horario));
 
 		// Bellota de mar
 		temporada = reloadTemporada();
@@ -2282,7 +1339,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Bellota de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Bellota de mar", temporada, horario));
 
 		// Bogavante 	
 		temporada = reloadTemporada();
@@ -2291,7 +1350,9 @@ public class Datos {
 		loadInTemporada("Mayo");
 		loadInTemporada("Junio");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Bogavante", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Bogavante", temporada, horario));
 
 		// Buccino
 		temporada = reloadTemporada();
@@ -2307,7 +1368,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Buccino", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Buccino", temporada, horario));
 
 		// Buey del Pacífico
 		temporada = reloadTemporada();
@@ -2318,7 +1381,9 @@ public class Datos {
 		loadInTemporada("Mayo");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Buey del Pacífico", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Buey del Pacífico", temporada, horario));
 
 		// Calamar luciérnaga
 		temporada = reloadTemporada();
@@ -2326,7 +1391,9 @@ public class Datos {
 		loadInTemporada("Abril");
 		loadInTemporada("Mayo");
 		loadInTemporada("Junio");
-		submarinos.add(new Submarino("Calamar luciérnaga", temporada, "21:00 - 4:00"));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		submarinos.add(new Submarino("Calamar luciérnaga", temporada, horario));
 
 		// Calamar vampiro
 		temporada = reloadTemporada();
@@ -2334,7 +1401,9 @@ public class Datos {
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		submarinos.add(new Submarino("", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Calamar vampiro", temporada, horario));
 
 		// Camarón boreal
 		temporada = reloadTemporada();
@@ -2344,7 +1413,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Camarón boreal", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Camarón boreal", temporada, horario));
 
 		// Canasta de flores de Venus
 		temporada = reloadTemporada();
@@ -2353,7 +1424,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Canasta de flores de Venus", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Canasta de flores de Venus", temporada, horario));
 
 		// Cangrejo boreal
 		temporada = reloadTemporada();
@@ -2362,7 +1435,9 @@ public class Datos {
 		loadInTemporada("Marzo");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Cangrejo boreal", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Cangrejo boreal", temporada, horario));
 
 		// Cangrejo de nieve
 		temporada = reloadTemporada();
@@ -2372,7 +1447,9 @@ public class Datos {
 		loadInTemporada("Abril");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Cangrejo de nieve", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Cangrejo de nieve", temporada, horario));
 
 		// Cangrejo gazami
 		temporada = reloadTemporada();
@@ -2382,20 +1459,26 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		submarinos.add(new Submarino("Cangrejo gazami", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Cangrejo gazami", temporada, horario));
 
 		// Cangrejo gigante japonés
 		temporada = reloadTemporada();
 		loadInTemporada("Marzo");
 		loadInTemporada("Abril");
-		submarinos.add(new Submarino("", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Cangrejo gigante japonés", temporada, horario));
 
 		// Cangrejo herradura
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Cangrejo herradura", temporada, "21:00 - 4:00"));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		submarinos.add(new Submarino("Cangrejo herradura", temporada, horario));
 
 		// Caracola espinosa
 		temporada = reloadTemporada();
@@ -2406,7 +1489,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Caracola espinosa", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Caracola espinosa", temporada, horario));
 
 		// Cerdo de mar
 		temporada = reloadTemporada();
@@ -2414,7 +1499,9 @@ public class Datos {
 		loadInTemporada("Febrero");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Cerdo de mar", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Cerdo de mar", temporada, horario));
 
 		// Erizo de mar
 		temporada = reloadTemporada();
@@ -2423,7 +1510,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Erizo de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Erizo de mar", temporada, horario));
 
 		// Erizo lápiz de pizarra
 		temporada = reloadTemporada();
@@ -2432,7 +1521,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Erizo lápiz de pizarra", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Erizo lápiz de pizarra", temporada, horario));
 
 		// Estrella de mar
 		temporada = reloadTemporada();
@@ -2448,13 +1539,17 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Estrella de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Estrella de mar", temporada, horario));
 
 		// Gusano políclado
 		temporada = reloadTemporada();
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Gusano políclado", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Gusano políclado", temporada, horario));
 
 		// Isópodo gigante
 		temporada = reloadTemporada();
@@ -2462,14 +1557,19 @@ public class Datos {
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
-		submarinos.add(new Submarino("Isópodo gigante", temporada, "9:00 - 16:00 y 21:00 - 4:00"));
+		horario = new ArrayList<String>();
+		horario.add("9:00 - 16:00");
+		horario.add("21:00 - 4:00");
+		submarinos.add(new Submarino("Isópodo gigante", temporada, horario));
 
 		// Langosta espinosa
 		temporada = reloadTemporada();
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Langosta espinosa", temporada, "21:00 - 4:00"));
+		horario = new ArrayList<String>();
+		horario.add("21:00 - 4:00");
+		submarinos.add(new Submarino("Langosta espinosa", temporada, horario));
 
 		// Langosta mantis
 		temporada = reloadTemporada();
@@ -2485,7 +1585,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Langosta mantis", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Langosta mantis", temporada, horario));
 
 		// Langostino tigre
 		temporada = reloadTemporada();
@@ -2493,14 +1595,18 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Langostino tigre", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Langostino tigre", temporada, horario));
 
 		// Medusa luna
 		temporada = reloadTemporada();
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Medusa luna", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Medusa luna", temporada, horario));
 
 		// Mejillón
 		temporada = reloadTemporada();
@@ -2511,7 +1617,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Mejillón", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Mejillón", temporada, horario));
 
 		// Nautilo
 		temporada = reloadTemporada();
@@ -2522,7 +1630,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		submarinos.add(new Submarino("Nautilo", temporada, "16:00 - 9:00"));
+		horario = new ArrayList<String>();
+		horario.add("16:00 - 9:00");
+		submarinos.add(new Submarino("Nautilo", temporada, horario));
 
 		// Ostra
 		temporada = reloadTemporada();
@@ -2532,7 +1642,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Ostra", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Ostra", temporada, horario));
 
 		// Ostra perlera
 		temporada = reloadTemporada();
@@ -2548,7 +1660,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Ostra perlera", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Ostra perlera", temporada, horario));
 
 		// Pepino de mar
 		temporada = reloadTemporada();
@@ -2558,7 +1672,9 @@ public class Datos {
 		loadInTemporada("Abril");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Pepino de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Pepino de mar", temporada, horario));
 
 		// Piña de mar
 		temporada = reloadTemporada();
@@ -2567,7 +1683,9 @@ public class Datos {
 		loadInTemporada("Junio");
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
-		submarinos.add(new Submarino("Piña de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Piña de mar", temporada, horario));
 
 		// Pulpo
 		temporada = reloadTemporada();
@@ -2583,7 +1701,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Pulpo", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Pulpo", temporada, horario));
 
 		// Pulpo paraguas
 		temporada = reloadTemporada();
@@ -2593,7 +1713,9 @@ public class Datos {
 		loadInTemporada("Septiembre");
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
-		submarinos.add(new Submarino("Pulpo paraguas", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Pulpo paraguas", temporada, horario));
 
 		// Taclobo gigante
 		temporada = reloadTemporada();
@@ -2602,7 +1724,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Taclobo gigante", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Taclobo gigante", temporada, horario));
 
 		// Uva de mar
 		temporada = reloadTemporada();
@@ -2610,7 +1734,9 @@ public class Datos {
 		loadInTemporada("Julio");
 		loadInTemporada("Agosto");
 		loadInTemporada("Septiembre");
-		submarinos.add(new Submarino("Uva de mar", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Uva de mar", temporada, horario));
 
 		// Vieira
 		temporada = reloadTemporada();
@@ -2626,7 +1752,9 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("Vieira", temporada, "24h"));
+		horario = new ArrayList<String>();
+		horario.add("24h");
+		submarinos.add(new Submarino("Vieira", temporada, horario));
 
 		guardarDatos(ficheroSubmarinos, submarinos);
 

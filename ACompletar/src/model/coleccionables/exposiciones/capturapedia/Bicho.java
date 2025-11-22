@@ -1,6 +1,7 @@
 package model.coleccionables.exposiciones.capturapedia;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Bicho extends Capturapedia implements Serializable {
@@ -8,10 +9,10 @@ public class Bicho extends Capturapedia implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private final String obtencion;
-    private final String condicion;
+    private ArrayList<String> condicion;
     
 
-    public Bicho(String nombre, HashMap<String, Boolean> temporada, String horario, String obtencion, String condicion) {
+    public Bicho(String nombre, HashMap<String, Boolean> temporada, ArrayList<String> horario, String obtencion, ArrayList<String> condicion) {
         super(nombre, temporada, horario);
         this.obtencion = obtencion;
         this.condicion = condicion;
@@ -21,7 +22,12 @@ public class Bicho extends Capturapedia implements Serializable {
         return obtencion;
     }
 
-    public String getCondicion() {
+    public ArrayList<String> getCondicion() {
         return condicion;
     }
+
+	@Override
+	public String toString() {
+		return super.toString() + "\n   | Obtencion: " + obtencion + "\n   | Condicion: " + condicion;
+	}
 }
