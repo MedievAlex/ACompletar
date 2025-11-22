@@ -1,12 +1,9 @@
-package model.coleccionables.exposiciones.servivo;
+package model.coleccionables.exposiciones.capturapedia;
 
 import java.io.Serializable;
 import java.util.HashMap;
 
-import model.Frecuencia;
-import model.Habitad;
-
-public class Submarino extends SerVivo implements Serializable {
+public class Submarino extends Capturapedia implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

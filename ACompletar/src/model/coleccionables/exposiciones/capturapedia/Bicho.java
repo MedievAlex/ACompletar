@@ -1,9 +1,9 @@
-package model.coleccionables.exposiciones.servivo;
+package model.coleccionables.exposiciones.capturapedia;
 
 import java.io.Serializable;
 import java.util.HashMap;
 
-public class Bicho extends SerVivo implements Serializable {
+public class Bicho extends Capturapedia implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

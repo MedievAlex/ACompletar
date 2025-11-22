@@ -15,9 +15,9 @@ import model.coleccionables.Giroide;
 import model.coleccionables.exposiciones.Fosil;
 import model.coleccionables.exposiciones.Fragmento;
 import model.coleccionables.exposiciones.Obra;
-import model.coleccionables.exposiciones.servivo.Bicho;
-import model.coleccionables.exposiciones.servivo.Pez;
-import model.coleccionables.exposiciones.servivo.Submarino;
+import model.coleccionables.exposiciones.capturapedia.Bicho;
+import model.coleccionables.exposiciones.capturapedia.Pez;
+import model.coleccionables.exposiciones.capturapedia.Submarino;
 
 public class Datos {
 
@@ -69,9 +69,1256 @@ public class Datos {
 	}
 
 	/****[EXPOSICIONES]*****************************************************************************************************************/
-	/****Seres Vivos: Bichos************************************************************************************************************/
+	/****Capturapedia: Bichos***********************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
+
+		// Abeja melífera
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		bichos.add(new Bicho("Abeja melífera", temporada, "8:00 - 17:00", "Cerca de flores", "Sin lluvia"));
+
+		// Araña
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("Araña", temporada, "19:00 - 8:00", "Sacudiendo árboles frutales", "-"));
+
+		// Avispa
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("Avispa", temporada, "24h", "Sacudiendo árboles no frutales", "#"));
+
+		// Cangrejo ermitaño
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("Cangrejo ermitaño", temporada, "19:00 - 8:00", "Playas", "-"));
+
+		// Caracol
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("Caracol", temporada, "24h", "Sobre rocas o arbustos", "Con lluvia"));
+
+		// Chinche
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		bichos.add(new Bicho("Chinche", temporada, "24h", "Cerca de flores", "Sin lluvia"));
+
+		// Chinche acuática gigante
+		temporada = reloadTemporada();
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		bichos.add(new Bicho("Chinche acuática gigante", temporada, "19:00 - 8:00", "Sobre agua dulce", "50"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
+
+		// nombre
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		bichos.add(new Bicho("nombre", temporada, "horario", "obtencion", "condicion"));
 
 		// nombre
 		temporada = reloadTemporada();
@@ -94,7 +1341,7 @@ public class Datos {
 		return bichos;
 	}
 
-	/****Seres Vivos: Peces*************************************************************************************************************/
+	/****Capturapedia: Peces************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
 		ArrayList<Coleccionable> peces = new ArrayList<Coleccionable>();
 
@@ -949,7 +2196,7 @@ public class Datos {
 		return peces;
 	}
 
-	/****Seres Vivos: Submarinos********************************************************************************************************/
+	/****Capturapedia: Submarinos*******************************************************************************************************/
 	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
 		ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
 
