@@ -107,7 +107,7 @@ public class main {
 		System.out.println("[4. Mostrar FOSILES]");
 		System.out.println("[5. Mostrar OBRAS DE ARTE]");
 		System.out.println("[6. Mostrar GIROIDES]");
-		System.out.println("[7. Mostrar TODO]");
+		System.out.println("[7. Mostrar MUSEO]");
 		System.out.println("[0. Salir]");
 		System.out.print("Elige una opcion: ");
 		return Utilidades.leerInt(0, 7);
@@ -117,6 +117,7 @@ public class main {
 	public static void mostrar(File fichero){
 		ObjectInputStream ois = null; // Lectura
 		boolean finArchivo = false;
+		int numero = 1;
 
 		if(fichero.exists()){
 			try {
@@ -125,7 +126,8 @@ public class main {
 				while (!finArchivo) {
 					try{
 						Coleccionable coleccionable = (Coleccionable) ois.readObject();					
-						System.out.println(coleccionable.toString());
+						System.out.println(numero+ "-" + coleccionable.toString());
+						numero++;
 						System.out.println("---------------------------------------");
 					} catch (EOFException e) { // Fin del archivo alcanzado
 						finArchivo = true;
@@ -150,6 +152,7 @@ public class main {
 		public static void mostrarMuseo(File fichero){
 			ObjectInputStream ois = null; // Lectura
 			boolean finArchivo = false;
+			int numero = 1;
 
 			if(fichero.exists()){
 				try {
@@ -160,21 +163,22 @@ public class main {
 							ArrayList<Coleccionable> lista = (ArrayList<Coleccionable>) ois.readObject();					
 							for (Coleccionable coleccionable : lista) {
 								if(coleccionable instanceof Bicho) {
-									System.out.print("[BICHO]    ");
+									System.out.print(numero+ "-" + "[BICHO]    ");
 								}
 								else if(coleccionable instanceof Pez) {
-									System.out.print("[PEZ]      ");
+									System.out.print(numero+ "-" + "[PEZ]      ");
 								}
 								else if(coleccionable instanceof Submarino) {
-									System.out.print("[SUBMARINO]");
+									System.out.print(numero+ "-" + "[SUBMARINO]");
 								}
 								else if(coleccionable instanceof Fosil) {
-									System.out.print("[FOSIL]    ");
+									System.out.print(numero+ "-" + "[FOSIL]    ");
 								}
 								else if(coleccionable instanceof Obra) {
-									System.out.print("[OBRA]     ");
+									System.out.print(numero+ "-" + "[OBRA]     ");
 								}
 								System.out.println(coleccionable.toString());
+								numero++;
 								System.out.println("---------------------------------------");
 							}
 						} catch (EOFException e) { // Fin del archivo alcanzado

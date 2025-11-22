@@ -26,13 +26,13 @@ public class Datos {
 
 	//***Carga los datos de los coleccionables******************************************************************************************/
 	public static void loadData(ArrayList<File> ficheros) {
-		
+
 		ArrayList<Coleccionable> bichos = loadBichos(ficheros.get(1));
 		ArrayList<Coleccionable> peces = loadPeces(ficheros.get(2));
 		ArrayList<Coleccionable> submarinos = loadSubmarinos(ficheros.get(3));
 		ArrayList<Coleccionable> fosiles = loadFosiles(ficheros.get(4));
 		ArrayList<Coleccionable> obras = loadObras(ficheros.get(5));
-		
+
 		ArrayList<Coleccionable> giroides = loadGiroides(ficheros.get(6));
 
 		try {
@@ -72,7 +72,7 @@ public class Datos {
 	/****Seres Vivos: Bichos************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
-		
+
 		// nombre
 		temporada = reloadTemporada();
 		loadInTemporada("Enero");
@@ -953,7 +953,33 @@ public class Datos {
 	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
 		ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
 
-		// nombre
+		// Abulón
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Abulón", temporada, "16:00 - 9:00"));
+
+		// Alga wakame
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Alga wakame", temporada, "24h"));
+
+		// Anémona
 		temporada = reloadTemporada();
 		loadInTemporada("Enero");
 		loadInTemporada("Febrero");
@@ -967,13 +993,399 @@ public class Datos {
 		loadInTemporada("Octubre");
 		loadInTemporada("Noviembre");
 		loadInTemporada("Dicienbre");
-		submarinos.add(new Submarino("nombre", temporada, "24h"));
-		
+		submarinos.add(new Submarino("Anémona", temporada, "24h"));
+
+		// Anguila jardinera
+		temporada = reloadTemporada();
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		submarinos.add(new Submarino("Anguila jardinera", temporada, "4:00 - 21:00"));
+
+		// Babosa de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Babosa de mar", temporada, "24h"));
+
+		// Bellota de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Bellota de mar", temporada, "24h"));
+
+		// Bogavante 	
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Bogavante", temporada, "24h"));
+
+		// Buccino
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Buccino", temporada, "24h"));
+
+		// Buey del Pacífico
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Buey del Pacífico", temporada, "24h"));
+
+		// Calamar luciérnaga
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		submarinos.add(new Submarino("Calamar luciérnaga", temporada, "21:00 - 4:00"));
+
+		// Calamar vampiro
+		temporada = reloadTemporada();
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		submarinos.add(new Submarino("", temporada, "16:00 - 9:00"));
+
+		// Camarón boreal
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Camarón boreal", temporada, "16:00 - 9:00"));
+
+		// Canasta de flores de Venus
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Canasta de flores de Venus", temporada, "24h"));
+
+		// Cangrejo boreal
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Cangrejo boreal", temporada, "24h"));
+
+		// Cangrejo de nieve
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Cangrejo de nieve", temporada, "24h"));
+
+		// Cangrejo gazami
+		temporada = reloadTemporada();
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		submarinos.add(new Submarino("Cangrejo gazami", temporada, "24h"));
+
+		// Cangrejo gigante japonés
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		submarinos.add(new Submarino("", temporada, "24h"));
+
+		// Cangrejo herradura
+		temporada = reloadTemporada();
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Cangrejo herradura", temporada, "21:00 - 4:00"));
+
+		// Caracola espinosa
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Caracola espinosa", temporada, "24h"));
+
+		// Cerdo de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Cerdo de mar", temporada, "16:00 - 9:00"));
+
+		// Erizo de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Erizo de mar", temporada, "24h"));
+
+		// Erizo lápiz de pizarra
+		temporada = reloadTemporada();
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Erizo lápiz de pizarra", temporada, "16:00 - 9:00"));
+
+		// Estrella de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Estrella de mar", temporada, "24h"));
+
+		// Gusano políclado
+		temporada = reloadTemporada();
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Gusano políclado", temporada, "16:00 - 9:00"));
+
+		// Isópodo gigante
+		temporada = reloadTemporada();
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		submarinos.add(new Submarino("Isópodo gigante", temporada, "9:00 - 16:00 y 21:00 - 4:00"));
+
+		// Langosta espinosa
+		temporada = reloadTemporada();
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Langosta espinosa", temporada, "21:00 - 4:00"));
+
+		// Langosta mantis
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Langosta mantis", temporada, "16:00 - 9:00"));
+
+		// Langostino tigre
+		temporada = reloadTemporada();
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Langostino tigre", temporada, "16:00 - 9:00"));
+
+		// Medusa luna
+		temporada = reloadTemporada();
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Medusa luna", temporada, "24h"));
+
+		// Mejillón
+		temporada = reloadTemporada();
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Mejillón", temporada, "24h"));
+
+		// Nautilo
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		submarinos.add(new Submarino("Nautilo", temporada, "16:00 - 9:00"));
+
+		// Ostra
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Ostra", temporada, "24h"));
+
+		// Ostra perlera
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Ostra perlera", temporada, "24h"));
+
+		// Pepino de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Pepino de mar", temporada, "24h"));
+
+		// Piña de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		submarinos.add(new Submarino("Piña de mar", temporada, "24h"));
+
+		// Pulpo
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Pulpo", temporada, "24h"));
+
+		// Pulpo paraguas
+		temporada = reloadTemporada();
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		submarinos.add(new Submarino("Pulpo paraguas", temporada, "24h"));
+
+		// Taclobo gigante
+		temporada = reloadTemporada();
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Taclobo gigante", temporada, "24h"));
+
+		// Uva de mar
+		temporada = reloadTemporada();
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		submarinos.add(new Submarino("Uva de mar", temporada, "24h"));
+
+		// Vieira
+		temporada = reloadTemporada();
+		loadInTemporada("Enero");
+		loadInTemporada("Febrero");
+		loadInTemporada("Marzo");
+		loadInTemporada("Abril");
+		loadInTemporada("Mayo");
+		loadInTemporada("Junio");
+		loadInTemporada("Julio");
+		loadInTemporada("Agosto");
+		loadInTemporada("Septiembre");
+		loadInTemporada("Octubre");
+		loadInTemporada("Noviembre");
+		loadInTemporada("Dicienbre");
+		submarinos.add(new Submarino("Vieira", temporada, "24h"));
+
 		guardarDatos(ficheroSubmarinos, submarinos);
 
 		return submarinos;
 	}
-		
+
 	//***Reinicia el valor de la temporada**********************************************************************************************/
 	private static HashMap<String, Boolean> reloadTemporada() {
 		HashMap<String, Boolean> temporadaVacia = new HashMap<String, Boolean>();
@@ -1234,7 +1646,7 @@ public class Datos {
 		obras.add(new Obra("Retrato oriental", "Mujer mirando hacia atrás", "Hishikawa Moronobu", TipoObra.CUADRO));
 		obras.add(new Obra("Retrato perla", "La joven de la perla", "Johannes Vermeer", TipoObra.CUADRO));
 		obras.add(new Obra("Retrato regio", "La dama del armiño", "Leonardo da Vinci", TipoObra.CUADRO));
-		
+
 		// ESCULTURAS
 		obras.add(new Obra("Busto antiguo", "Busto de Nefertiti", "Thutmose", TipoObra.ESCULTURA));
 		obras.add(new Obra("Cabeza colosal", "Cabeza colosal olmeca", "Desconocido", TipoObra.ESCULTURA));
@@ -1249,7 +1661,7 @@ public class Datos {
 		obras.add(new Obra("Figura materna", "Loba capitolina", "Desconocido", TipoObra.ESCULTURA));
 		obras.add(new Obra("Piedra políglota", "Piedra de Rosetta", "Desconocido", TipoObra.ESCULTURA));
 		obras.add(new Obra("Urna imponente", "Houmuwu ding", "Desconocido", TipoObra.ESCULTURA));
-		
+
 		guardarDatos(ficheroObras, obras);
 
 		return obras;
@@ -1259,7 +1671,7 @@ public class Datos {
 	/****Giroides***********************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadGiroides(File ficheroGiroides) {
 		ArrayList<Coleccionable> giroides = new ArrayList<Coleccionable>();
-		
+
 		giroides.add(new Giroide("Acolchoida"));
 		giroides.add(new Giroide("Agitoide"));
 		giroides.add(new Giroide("Aletensoide"));
