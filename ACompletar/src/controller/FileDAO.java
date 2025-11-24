@@ -18,6 +18,12 @@ public interface FileDAO
     // Muestra el fichero
     public void mostrar(int file);
     
+    public boolean buscarColeccionable(int file, String nombre);
+	
+	public Coleccionable obtenerColeccionable(int file, String nombre);
+	
+	public void modificar(int file, String nombre);
+    
     // Obtener listado de BICHOS (1)
     public ArrayList<Coleccionable> obtenerBichos();
     

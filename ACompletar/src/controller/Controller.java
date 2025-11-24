@@ -30,6 +30,18 @@ public class Controller {
 	public void mostrar(int file){
 		dao.mostrar(file);
 	}
+	
+	public boolean buscarColeccionable(int file, String nombre) {
+		return dao.buscarColeccionable(file, nombre);
+	}
+	
+	public Coleccionable obtenerColeccionable(int file, String nombre) {
+		return dao.obtenerColeccionable(file, nombre);
+	}
+	
+	public void modificar(int file, String nombre) {
+		dao.modificar(file, nombre);
+	}
 
 	// Obtener listado de BICHOS (1)
 	public ArrayList<Coleccionable> obtenerBichos(){
