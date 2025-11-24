@@ -53,7 +53,7 @@ public class Datos {
 	}
 
 	//***Guarda los datos en los ficheros individuales**********************************************************************************/
-	private static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
+	public static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
 			for (Coleccionable coleccionable : lista) {
@@ -68,7 +68,32 @@ public class Datos {
 		}
 	}
 
-	/****[EXPOSICIONES]*****************************************************************************************************************/
+	//***Reinicia el valor de la temporada**********************************************************************************************/
+	private static HashMap<String, Boolean> reloadTemporada() {
+		HashMap<String, Boolean> temporadaVacia = new HashMap<String, Boolean>();
+
+		temporadaVacia.put("Enero", false); // 1
+		temporadaVacia.put("Febrero", false); // 2
+		temporadaVacia.put("Marzo", false); // 3
+		temporadaVacia.put("Abril", false); // 4
+		temporadaVacia.put("Mayo", false); // 5
+		temporadaVacia.put("Junio", false); // 6
+		temporadaVacia.put("Julio", false); // 7
+		temporadaVacia.put("Agosto", false); // 8
+		temporadaVacia.put("Septiembre", false); // 9
+		temporadaVacia.put("Octubre", false); // 10
+		temporadaVacia.put("Noviembre", false); // 11
+		temporadaVacia.put("Diciembre", false); // 12     
+
+		return temporadaVacia;
+	}
+
+	//***Registra el mes en la temporada************************************************************************************************/
+	private static void loadInTemporada(String mes) {
+		temporada.replace(mes, true);
+	}
+
+        /****[EXPOSICIONES]*****************************************************************************************************************/
 	/****Capturapedia: Bichos***********************************************************************************************************/
 	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
@@ -1761,31 +1786,6 @@ public class Datos {
 		return submarinos;
 	}
 
-	//***Reinicia el valor de la temporada**********************************************************************************************/
-	private static HashMap<String, Boolean> reloadTemporada() {
-		HashMap<String, Boolean> temporadaVacia = new HashMap<String, Boolean>();
-
-		temporadaVacia.put("Enero", false); // 1
-		temporadaVacia.put("Febrero", false); // 2
-		temporadaVacia.put("Marzo", false); // 3
-		temporadaVacia.put("Abril", false); // 4
-		temporadaVacia.put("Mayo", false); // 5
-		temporadaVacia.put("Junio", false); // 6
-		temporadaVacia.put("Julio", false); // 7
-		temporadaVacia.put("Agosto", false); // 8
-		temporadaVacia.put("Septiembre", false); // 9
-		temporadaVacia.put("Octubre", false); // 10
-		temporadaVacia.put("Noviembre", false); // 11
-		temporadaVacia.put("Diciembre", false); // 12     
-
-		return temporadaVacia;
-	}
-
-	//***Registra el mes en la temporada************************************************************************************************/
-	private static void loadInTemporada(String mes) {
-		temporada.replace(mes, true);
-	}
-
 	/****Fosiles************************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
 		ArrayList<Coleccionable> fosiles = new ArrayList<Coleccionable>();
@@ -2087,5 +2087,16 @@ public class Datos {
 		guardarDatos(ficheroGiroides, giroides);
 
 		return giroides;
+	}
+        
+        /****Giroides***********************************************************************************************************************/
+	private static ArrayList<Coleccionable> loadFlores(File ficheroFlores) {
+		ArrayList<Coleccionable> flores = new ArrayList<Coleccionable>();
+
+		
+
+		guardarDatos(ficheroFlores, flores);
+
+		return flores;
 	}
 }
