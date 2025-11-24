@@ -27,8 +27,12 @@ public class Datos {
 	private static ObjectOutputStream oos = null; // Escritura
 	private static HashMap<String, Boolean> temporada;
 
+        public Datos(){
+            
+        }
+        
 	//***Carga los datos de los coleccionables******************************************************************************************/
-	public static void loadData(ArrayList<File> ficheros) {
+	public void loadData(ArrayList<File> ficheros) {
 
 		ArrayList<Coleccionable> bichos = loadBichos(ficheros.get(1));
 		ArrayList<Coleccionable> peces = loadPeces(ficheros.get(2));
@@ -57,7 +61,7 @@ public class Datos {
 	}
 
 	//***Guarda los datos en los ficheros individuales**********************************************************************************/
-	public static void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
+	private void guardarDatos(File fichero, ArrayList<Coleccionable> lista) {
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(fichero)); // Escritura
 			for (Coleccionable coleccionable : lista) {
@@ -73,7 +77,7 @@ public class Datos {
 	}
 
 	//***Reinicia el valor de la temporada**********************************************************************************************/
-	private static HashMap<String, Boolean> reloadTemporada() {
+	private HashMap<String, Boolean> reloadTemporada() {
 		HashMap<String, Boolean> temporadaVacia = new HashMap<String, Boolean>();
 
 		temporadaVacia.put("Enero", false); // 1
@@ -93,13 +97,13 @@ public class Datos {
 	}
 
 	//***Registra el mes en la temporada************************************************************************************************/
-	private static void loadInTemporada(String mes) {
+	private void loadInTemporada(String mes) {
 		temporada.replace(mes, true);
 	}
 
         /****[EXPOSICIONES]*****************************************************************************************************************/
 	/****Capturapedia: Bichos***********************************************************************************************************/
-	private static ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
+	private ArrayList<Coleccionable> loadBichos(File ficheroBichos) {
 		ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
 		ArrayList<String> horario;
 		ArrayList<String> condicion;
@@ -255,7 +259,7 @@ public class Datos {
 	}
 
 	/****Capturapedia: Peces************************************************************************************************************/
-	private static ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
+	private ArrayList<Coleccionable> loadPeces(File ficheroPeces) {
 		ArrayList<Coleccionable> peces = new ArrayList<Coleccionable>();
 		ArrayList<String> horario;
 
@@ -1272,7 +1276,7 @@ public class Datos {
 	}
 
 	/****Capturapedia: Submarinos*******************************************************************************************************/
-	private static ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
+	private ArrayList<Coleccionable> loadSubmarinos(File ficheroSubmarinos) {
 		ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
 		ArrayList<String> horario;
 
@@ -1791,7 +1795,7 @@ public class Datos {
 	}
 
 	/****Fosiles************************************************************************************************************************/
-	private static ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
+	private ArrayList<Coleccionable> loadFosiles(File ficheroFosiles) {
 		ArrayList<Coleccionable> fosiles = new ArrayList<Coleccionable>();
 		ArrayList<Fragmento> fragmentos;
 
@@ -1991,7 +1995,7 @@ public class Datos {
 	}
 
 	/****Obras de Arte******************************************************************************************************************/
-	private static ArrayList<Coleccionable> loadObras(File ficheroObras) {
+	private ArrayList<Coleccionable> loadObras(File ficheroObras) {
 		ArrayList<Coleccionable> obras = new ArrayList<Coleccionable>();
 
 		// CUADROS
@@ -2048,7 +2052,7 @@ public class Datos {
 
 	/****[COLECCIONABLES]***************************************************************************************************************/
 	/****Giroides***********************************************************************************************************************/
-	private static ArrayList<Coleccionable> loadGiroides(File ficheroGiroides) {
+	private ArrayList<Coleccionable> loadGiroides(File ficheroGiroides) {
 		ArrayList<Coleccionable> giroides = new ArrayList<Coleccionable>();
 
 		giroides.add(new Giroide("Acolchoida"));
@@ -2094,7 +2098,7 @@ public class Datos {
 	}
         
         /****Flores*************************************************************************************************************************/
-	private static ArrayList<Coleccionable> loadFlores(File ficheroFlores) {
+	private ArrayList<Coleccionable> loadFlores(File ficheroFlores) {
 		ArrayList<Coleccionable> flores = new ArrayList<Coleccionable>();
                 ArrayList<Color> colores;
                 

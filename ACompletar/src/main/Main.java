@@ -1,5 +1,6 @@
 package main;
 
+import controller.Controller;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,28 +15,20 @@ import model.coleccionables.exposiciones.Obra;
 import model.coleccionables.exposiciones.capturapedia.Bicho;
 import model.coleccionables.exposiciones.capturapedia.Pez;
 import model.coleccionables.exposiciones.capturapedia.Submarino;
-import model.data.*;
 import utilidades.Utilidades;
 
 public class Main {
 
     public static void main(String[] args) {
-        ArrayList<File> ficheros = new ArrayList<File>();
-        String directoryPath = "data/";
-        ficheros.add(new File(directoryPath + "museo.ac")); // MUSEO = 0
-        ficheros.add(new File(directoryPath + "bichos.ac")); // BICHOS = 1
-        ficheros.add(new File(directoryPath + "peces.ac")); // PECES = 2
-        ficheros.add(new File(directoryPath + "submarinos.ac")); // SUBMARINOS = 3
-        ficheros.add(new File(directoryPath + "fosiles.ac")); // FOSILES = 4
-        ficheros.add(new File(directoryPath + "obras.ac")); // OBRAS = 5
-        ficheros.add(new File(directoryPath + "giroides.ac")); // GIROIDES = 6
-        ficheros.add(new File(directoryPath + "flores.ac")); // GIROIDES = 7
-
+        Controller cont = new Controller();
+        
+        cont.iniciarFicheros();
+        
         int opcion = 0;
 
-        if (!verificarFicheros(8, ficheros)) {
+        if (!cont.verificarFicheros(8)) {
             System.out.println("***************************************");
-            Datos.loadData(ficheros);
+            cont.loadData();
             System.out.println("[Ficheros Recargados]");
         }
 
@@ -46,31 +39,31 @@ public class Main {
 
             switch (opcion) {
                 case 1: // 1. Mostrar BICHOS
-                    mostrar(ficheros.get(1));
+                    cont.mostrar(1);
                     //mostrarBichos(ficheros.get(1));
                     break;
                 case 2: // Mostrar PECES
-                    mostrar(ficheros.get(2));
+                    cont.mostrar(2);
                     //mostrarPeces(ficheros.get(2));
                     break;
                 case 3: // Mostrar SUBMARINOS
-                    mostrar(ficheros.get(3));
+                    cont.mostrar(3);
                     //mostrarSubmarinos(ficheros.get(3));
                     break;
                 case 4: // Mostrar FOSILES
-                    mostrar(ficheros.get(4));
+                    cont.mostrar(4);
                     //mostrarFosiles(ficheros.get(4));
                     break;
                 case 5: // Mostrar OBRAS DE ARTE
-                    mostrar(ficheros.get(5));
+                    cont.mostrar(5);
                     //mostrarObras(ficheros.get(5));
                     break;
                 case 6: // Mostrar GIROIDES
-                    mostrar(ficheros.get(6));
+                    cont.mostrar(6);
                     //mostrarGiroides(ficheros.get(6));
                     break;
                 case 7: // Mostrar FLORES
-                    mostrar(ficheros.get(7));
+                    cont.mostrar(7);
                     break;
                 case 0:
                     System.out.println(" ________________\n|                |\n|      AGUR      |\n|________________|\n");
@@ -81,7 +74,7 @@ public class Main {
     }
 
     //***Verifica la existencia de los ficheros******************************************************************************************/
-    public static boolean verificarFicheros(int cantidad, ArrayList<File> ficheros) {
+    public boolean verificarFicheros(int cantidad, ArrayList<File> ficheros) {
         int existentes = 0;
 
         for (File fichero : ficheros) {
@@ -111,11 +104,12 @@ public class Main {
         System.out.println("[7. Mostrar FLORES]");
         System.out.println("[0. Salir]");
         System.out.print("Elige una opcion: ");
+        
         return Utilidades.leerInt(0, 7);
     }
 
     //***Muestra el fichero**************************************************************************************************************/
-    public static void mostrar(File fichero) {
+    public void mostrar(File fichero) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -150,7 +144,7 @@ public class Main {
     }
 
     //***Muestra el fichero**************************************************************************************************************/
-    public static void mostrarMuseo(File fichero) {
+    public void mostrarMuseo(File fichero) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -200,7 +194,7 @@ public class Main {
     /**
      * **[BICHOS]***********************************************************************************************************************
      */
-    public static void mostrarBichos(File ficheroBichos) {
+    public void obtenerBichos(File ficheroBichos) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -240,7 +234,7 @@ public class Main {
     /**
      * **[PECES]************************************************************************************************************************
      */
-    public static void mostrarPeces(File ficheroPeces) {
+    public void obtenerPeces(File ficheroPeces) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -280,7 +274,7 @@ public class Main {
     /**
      * **[SUBMARINOS]*******************************************************************************************************************
      */
-    public static void mostrarSubmarinos(File ficheroSubmarinos) {
+    public void obtenerSubmarinos(File ficheroSubmarinos) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -320,7 +314,7 @@ public class Main {
     /**
      * **[FOSILES]**********************************************************************************************************************
      */
-    public static void mostrarFosiles(File ficheroFosiles) {
+    public void obtenerFosiles(File ficheroFosiles) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -360,7 +354,7 @@ public class Main {
     /**
      * **[OBRAS DE ARTE]****************************************************************************************************************
      */
-    public static void mostrarObras(File ficheroObras) {
+    public void obtenerObras(File ficheroObras) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -400,7 +394,7 @@ public class Main {
     /**
      * **[SUBMARINOS]*******************************************************************************************************************
      */
-    public static void mostrarGiroides(File ficheroGiroides) {
+    public void obtenerGiroides(File ficheroGiroides) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;

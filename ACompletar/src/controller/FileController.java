@@ -20,31 +20,24 @@ import model.coleccionables.exposiciones.capturapedia.Bicho;
 import model.coleccionables.exposiciones.capturapedia.Pez;
 import model.coleccionables.exposiciones.capturapedia.Submarino;
 import model.data.Datos;
-import utilidades.Utilidades;
 
 /**
  *
  * @author 2dami
  */
-public class fileController {
-    
-        private static ArrayList<File> ficheros;
-                
-        public static void iniciarFicheros() {        
-        ficheros = new ArrayList<File>();
-        String directoryPath = "data/";
-        ficheros.add(new File(directoryPath + "museo.ac")); // MUSEO = 0
-        ficheros.add(new File(directoryPath + "bichos.ac")); // BICHOS = 1
-        ficheros.add(new File(directoryPath + "peces.ac")); // PECES = 2
-        ficheros.add(new File(directoryPath + "submarinos.ac")); // SUBMARINOS = 3
-        ficheros.add(new File(directoryPath + "fosiles.ac")); // FOSILES = 4
-        ficheros.add(new File(directoryPath + "obras.ac")); // OBRAS = 5
-        ficheros.add(new File(directoryPath + "giroides.ac")); // GIROIDES = 6
-        ficheros.add(new File(directoryPath + "flores.ac")); // GIROIDES = 7
-    }
+public class FileController implements FileDAO{
 
+    private final Datos datos;
+    private final ArrayList<File> ficheros;
+
+    public FileController(){
+        datos = new Datos();
+        ficheros = new ArrayList<File>();
+    }
+    
     //***Verifica la existencia de los ficheros******************************************************************************************/
-    public static boolean verificarFicheros(int cantidad, ArrayList<File> ficheros) {
+    @Override
+    public boolean verificarFicheros(int cantidad) {
         int existentes = 0;
 
         for (File fichero : ficheros) {
@@ -59,26 +52,31 @@ public class fileController {
             return false;
         }
     }
+    
+    //***Genera los ficheros*************************************************************************************************************/
+    @Override
+    public void iniciarFicheros() {
+        String directoryPath = "data/";
+        ficheros.add(new File(directoryPath + "museo.ac")); // MUSEO = 0
+        ficheros.add(new File(directoryPath + "bichos.ac")); // BICHOS = 1
+        ficheros.add(new File(directoryPath + "peces.ac")); // PECES = 2
+        ficheros.add(new File(directoryPath + "submarinos.ac")); // SUBMARINOS = 3
+        ficheros.add(new File(directoryPath + "fosiles.ac")); // FOSILES = 4
+        ficheros.add(new File(directoryPath + "obras.ac")); // OBRAS = 5
+        ficheros.add(new File(directoryPath + "giroides.ac")); // GIROIDES = 6
+        ficheros.add(new File(directoryPath + "flores.ac")); // GIROIDES = 7
+    }
 
-    /**
-     * **[MENU]**********************************************************************************************************************
-     */
-    public static int mostrarMenu() {
-        System.out.println(" ________________\n|                |\n|      MENU      |\n|   PRINCIPAL    |\n|________________|\n");
-        System.out.println("[1. Mostrar BICHOS]");
-        System.out.println("[2. Mostrar PECES]");
-        System.out.println("[3. Mostrar SUBMARINOS]");
-        System.out.println("[4. Mostrar FOSILES]");
-        System.out.println("[5. Mostrar OBRAS DE ARTE]");
-        System.out.println("[6. Mostrar GIROIDES]");
-        System.out.println("[7. Mostrar FLORES]");
-        System.out.println("[0. Salir]");
-        System.out.print("Elige una opcion: ");
-        return Utilidades.leerInt(0, 7);
+    //***Verifica la existencia de los ficheros******************************************************************************************/
+    @Override
+    public void loadData() {
+        datos.loadData(ficheros);
     }
 
     //***Muestra el fichero**************************************************************************************************************/
-    public static void mostrar(File fichero) {
+    @Override
+    public void mostrar(int file) {
+        File fichero = ficheros.get(file);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -113,7 +111,7 @@ public class fileController {
     }
 
     //***Muestra el fichero**************************************************************************************************************/
-    public static void mostrarMuseo(File fichero) {
+    public void mostrarMuseo(File fichero) {
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
         int numero = 1;
@@ -163,23 +161,21 @@ public class fileController {
     /**
      * **[BICHOS]***********************************************************************************************************************
      */
-    public static void mostrarBichos(File ficheroBichos) {
+    @Override
+    public ArrayList<Coleccionable> obtenerBichos() {
+        File ficheroBichos = ficheros.get(1);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+        ArrayList<Coleccionable> bichos = new ArrayList<Coleccionable>();
 
         if (ficheroBichos.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroBichos)); // Lectura
-                System.out.println("[BICHOS]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Bicho) {
-                            System.out.println(numero + "-" + ((Bicho) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            bichos.add((Bicho) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -198,28 +194,27 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return bichos;
     }
 
     /**
      * **[PECES]************************************************************************************************************************
      */
-    public static void mostrarPeces(File ficheroPeces) {
+    @Override
+    public ArrayList<Coleccionable> obtenerPeces() {
+        File ficheroPeces = ficheros.get(2);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+        ArrayList<Coleccionable> peces = new ArrayList<Coleccionable>();
 
         if (ficheroPeces.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroPeces)); // Lectura
-                System.out.println("[PECES]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Pez) {
-                            System.out.println(numero + "-" + ((Pez) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            peces.add((Pez) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -238,28 +233,27 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return peces;
     }
 
     /**
      * **[SUBMARINOS]*******************************************************************************************************************
      */
-    public static void mostrarSubmarinos(File ficheroSubmarinos) {
+    @Override
+    public ArrayList<Coleccionable> obtenerSubmarinos() {
+        File ficheroSubmarinos = ficheros.get(3);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+         ArrayList<Coleccionable> submarinos = new ArrayList<Coleccionable>();
 
         if (ficheroSubmarinos.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroSubmarinos)); // Lectura
-                System.out.println("[SUBMARINOS]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Submarino) {
-                            System.out.println(numero + "-" + ((Submarino) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            submarinos.add((Submarino) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -278,28 +272,27 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return submarinos;
     }
 
     /**
      * **[FOSILES]**********************************************************************************************************************
      */
-    public static void mostrarFosiles(File ficheroFosiles) {
+    @Override
+    public ArrayList<Coleccionable> obtenerFosiles() {
+        File ficheroFosiles = ficheros.get(4);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+        ArrayList<Coleccionable> fosiles = new ArrayList<Coleccionable>();
 
         if (ficheroFosiles.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroFosiles)); // Lectura
-                System.out.println("[FOSILES]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Fosil) {
-                            System.out.println(numero + "-" + ((Fosil) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            fosiles.add((Fosil) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -318,28 +311,28 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return fosiles;
     }
 
     /**
-     * **[OBRAS DE ARTE]****************************************************************************************************************
+     * **[OBRAS DE
+     * ARTE]****************************************************************************************************************
      */
-    public static void mostrarObras(File ficheroObras) {
+    @Override
+    public ArrayList<Coleccionable> obtenerObras() {
+        File ficheroObras = ficheros.get(5);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+        ArrayList<Coleccionable> obras = new ArrayList<Coleccionable>();
 
         if (ficheroObras.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroObras)); // Lectura
-                System.out.println("[OBRAS DE ARTE]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Obra) {
-                            System.out.println(numero + "-" + ((Obra) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            obras.add((Obra) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -358,28 +351,27 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return obras;
     }
 
     /**
      * **[SUBMARINOS]*******************************************************************************************************************
      */
-    public static void mostrarGiroides(File ficheroGiroides) {
+    @Override
+    public ArrayList<Coleccionable> obtenerGiroides() {
+        File ficheroGiroides = ficheros.get(6);
         ObjectInputStream ois = null; // Lectura
         boolean finArchivo = false;
-        int numero = 1;
+        ArrayList<Coleccionable> giroides = new ArrayList<Coleccionable>();
 
         if (ficheroGiroides.exists()) {
             try {
                 ois = new ObjectInputStream(new FileInputStream(ficheroGiroides)); // Lectura
-                System.out.println("[GIROIDES]");
-                System.out.println("---------------------------------------");
                 while (!finArchivo) {
                     try {
                         Coleccionable coleccionable = (Coleccionable) ois.readObject();
                         if (coleccionable instanceof Giroide) {
-                            System.out.println(numero + "-" + ((Giroide) coleccionable).toString());
-                            numero++;
-                            System.out.println("---------------------------------------");
+                            giroides.add((Giroide) coleccionable);
                         }
                     } catch (EOFException e) { // Fin del archivo alcanzado
                         finArchivo = true;
@@ -398,5 +390,6 @@ public class fileController {
         } else {
             System.err.println("[ERROR] Fichero no encontrado.");
         }
+        return giroides;
     }
 }
