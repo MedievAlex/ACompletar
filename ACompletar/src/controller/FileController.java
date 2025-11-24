@@ -67,7 +67,7 @@ public class FileController implements FileDAO{
         ficheros.add(new File(directoryPath + "flores.ac")); // GIROIDES = 7
     }
 
-    //***Verifica la existencia de los ficheros******************************************************************************************/
+    //***Carga los datos en los ficheros*******************************************************************************************/
     @Override
     public void loadData() {
         datos.loadData(ficheros);

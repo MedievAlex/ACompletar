@@ -6,12 +6,16 @@ import model.coleccionables.Coleccionable;
 public interface FileDAO
 {
   
+	// Verifica la existencia de los ficheros
     public boolean verificarFicheros(int cantidad);
 
+    // Genera los ficheros
     public void iniciarFicheros();
 
+    // Carga los datos en los ficheros
     public void loadData();
     
+    // Muestra el fichero
     public void mostrar(int file);
     
     // Obtener listado de BICHOS (1)
