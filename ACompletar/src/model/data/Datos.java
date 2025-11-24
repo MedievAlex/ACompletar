@@ -9,8 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import model.Frecuencia;
 import model.Habitad;
+import model.TipoColor;
 import model.TipoObra;
 import model.coleccionables.Coleccionable;
+import model.coleccionables.Color;
+import model.coleccionables.Flor;
 import model.coleccionables.Giroide;
 import model.coleccionables.exposiciones.Fosil;
 import model.coleccionables.exposiciones.Fragmento;
@@ -34,6 +37,7 @@ public class Datos {
 		ArrayList<Coleccionable> obras = loadObras(ficheros.get(5));
 
 		ArrayList<Coleccionable> giroides = loadGiroides(ficheros.get(6));
+                ArrayList<Coleccionable> flores = loadFlores(ficheros.get(7));
 
 		try {
 			oos = new ObjectOutputStream(new FileOutputStream(ficheros.get(0))); // Escritura
@@ -2089,11 +2093,95 @@ public class Datos {
 		return giroides;
 	}
         
-        /****Giroides***********************************************************************************************************************/
+        /****Flores*************************************************************************************************************************/
 	private static ArrayList<Coleccionable> loadFlores(File ficheroFlores) {
 		ArrayList<Coleccionable> flores = new ArrayList<Coleccionable>();
-
-		
+                ArrayList<Color> colores;
+                
+                // Anémonas
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.SEMILLA));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Azul", TipoColor.HIBRIDO));
+                colores.add(new Color("Morado", TipoColor.HIBRIDO));
+		flores.add(new Flor("Anémona", colores));
+                
+                // Cosmos
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Negro", TipoColor.HIBRIDO));
+		flores.add(new Flor("Cosmos", colores));
+                
+                // Cristantemos
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Negro", TipoColor.HIBRIDO));
+		flores.add(new Flor("Cristantemo", colores));
+                
+                // Jacintos
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Azul", TipoColor.HIBRIDO));
+                colores.add(new Color("Morado", TipoColor.HIBRIDO));
+		flores.add(new Flor("Jacinto", colores));
+                
+                // Lirios
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Negro", TipoColor.HIBRIDO));
+		flores.add(new Flor("Lirio", colores));
+                
+                // Rosas
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Morado", TipoColor.HIBRIDO));
+                colores.add(new Color("Negro", TipoColor.HIBRIDO));
+                colores.add(new Color("Azul", TipoColor.HIBRIDO));
+                colores.add(new Color("Oro", TipoColor.HIBRIDO));
+		flores.add(new Flor("Rosa", colores));
+                
+                // Tulipanes
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Rosa", TipoColor.HIBRIDO));
+                colores.add(new Color("Morado", TipoColor.HIBRIDO));
+                colores.add(new Color("Negro", TipoColor.HIBRIDO));
+		flores.add(new Flor("Tulipan", colores));
+                
+                // Violas
+                colores = new ArrayList<Color>();
+                colores.add(new Color("Rojo", TipoColor.SEMILLA));
+                colores.add(new Color("Blanco", TipoColor.SEMILLA));
+                colores.add(new Color("Amarillo", TipoColor.SEMILLA));
+                colores.add(new Color("Naranja", TipoColor.HIBRIDO));
+                colores.add(new Color("Azul", TipoColor.HIBRIDO));
+                colores.add(new Color("Morado", TipoColor.HIBRIDO));
+		flores.add(new Flor("Viola", colores));
 
 		guardarDatos(ficheroFlores, flores);
 

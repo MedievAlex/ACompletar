@@ -3,14 +3,14 @@ package model.coleccionables;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Flores  extends Coleccionable implements Serializable {
+public class Flor extends Coleccionable implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private ArrayList<Color> colores;
     private boolean completo;
 
-    public Flores(String nombre, ArrayList<Color> colores) {
+    public Flor(String nombre, ArrayList<Color> colores) {
         super(nombre);
         this.colores = colores;
         this.completo = false;
@@ -39,4 +39,9 @@ public class Flores  extends Coleccionable implements Serializable {
             completo = false;
         }
     }  
+
+    @Override
+    public String toString() {
+        return super.toString() + "  | Completo: " + completo + "\n   | Colores: " + colores;
+    }
 }
