@@ -7,14 +7,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
 
 import model.coleccionables.*;
-import model.coleccionables.exposiciones.Fosil;
-import model.coleccionables.exposiciones.Obra;
-import model.coleccionables.exposiciones.capturapedia.Bicho;
-import model.coleccionables.exposiciones.capturapedia.Pez;
-import model.coleccionables.exposiciones.capturapedia.Submarino;
 import utilidades.Utilidades;
 
 public class Main {
